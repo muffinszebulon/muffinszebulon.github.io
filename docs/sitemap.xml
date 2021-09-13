@@ -22,6 +22,17 @@
     </image:image>
 </url>
 <url>
+    <loc>https://muffinszebulon.github.io/2010-AfterAllTheStoryGoes.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/2010-AfterAllTheStoryGoes.html"/>
+    <lastmod>2021-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2010-AfterAllTheStoryGoes.jpg</image:loc>
+        <image:title>Muffin's Zebulon - After all the story goes (2010)</image:title>
+    </image:image>
+</url>
+<url>
     <loc>https://muffinszebulon.github.io/sitemap.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/sitemap.html"/>
     <lastmod>2021-08-30</lastmod>

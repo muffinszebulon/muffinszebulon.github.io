@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000">
+  <meta name="author" content="Gilles Gonon, Denis Braud">
+  <meta name="description" content="Muffin's Zebulon - Times & Roll (2021)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Muffin's Zebulon - Times & Roll (2021)">
+  <meta property="og:description" content="Muffin's Zebulon - Times & Roll (2021)">
+  <meta property="og:site_name" content="Muffin's Zebulon">
+  <meta property="og:country-name" content="France">
+  <meta property="og:url" content="https://muffinszebulon.github.io/2021-TimesRoll.html">
+  <meta property="og:image" content="https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png">
+  <meta name="robots" content="index,follow">
+  <title>Muffin's Zebulon - Times & Roll (2021)</title>
+  <link rel="canonical" href="https://muffinszebulon.github.io/2021-TimesRoll.html">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#666666">
+  <meta name="apple-mobile-web-app-title" content="Muffin's Zebulon">
+  <meta name="application-name" content="Muffin's Zebulon">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="common.css" rel="stylesheet">
+  <link href="common-album.css" rel="stylesheet">
+  <link href="2021-TimesRoll.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark pt-2 pb-0">
+    <div class="container-fluid">
+      <a href="index.html" class="p-0 ms-2"><img loading="lazy" src="favicon-rondblanc.png" alt="Home" width="40" height="40"></a>
+      <a class="navbar-brand text-center" role="button" data-bs-target="#carouselDark" data-bs-slide-to="1">Muffin's Zebulon<br><span class="small text-white">Times & Roll</span></a>
+      <button class="navbar-toggler me-2 p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover" width="40" height="40" class="p-0 m-0">
+      </button>
+      <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+        <ul class="navbar-nav track">
+          <li class="nav-item"><a class="nav-link" data-bs-target="#carouselDark" data-bs-slide-to="0">
+            <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll.png"  alt="Cover" width="25" height="25" class="float-start me-1">
+            <b>Times & Roll</b> (2021)
+          </a></li>
+          <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="1">Crédits</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="2" onclick="tracksAudioSet(0)"><span class="badge border">1</span> Time's goin by</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="3" onclick="tracksAudioSet(1)"><span class="badge border">2</span> Girl and boy</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="4" onclick="tracksAudioSet(2)"><span class="badge border">3</span> Vinaigre</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="5" onclick="tracksAudioSet(3)"><span class="badge border">4</span> I'll be here</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="6" onclick="tracksAudioSet(4)"><span class="badge border">5</span> One more year</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="7" onclick="tracksAudioSet(5)"><span class="badge border">6</span> It's time for you</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="8" onclick="tracksAudioSet(6)"><span class="badge border">7</span> Virus</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="9" onclick="tracksAudioSet(7)"><span class="badge border">8</span> Alien</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="10" onclick="tracksAudioSet(8)"><span class="badge border">9</span> Bad joke</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="11" onclick="tracksAudioSet(9)"><span class="badge border">10</span> Mystery girl</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="12" onclick="tracksAudioSet(10)"><span class="badge border">11</span> A very good mum</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="bg-dark text-white p-0 m-0 pt-1">
+      <div class="row p-0 pb-2 m-0">
+        <div class="col-2"><a onclick="tracksAudioPrev()" role="button" class="text-white p-1" title="Morceau précédent"><i class="fas fa-backward"></i></a></div>
+        <div class="col text-center"><strong id="audio-title">Time's goin by</strong></div>
+        <div class="col-2 text-end pe-2"><a onclick="tracksAudioNext()" role="button" class="text-white p-1" title="Morceau suivant"><i class="fas fa-forward"></i></a></div>
+      </div>
+      <div class="text-center p-0 m-0 pb-1">
+        <audio id="audio" src="audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3" controls="" class="bg-light rounded-pill">
+          Your browser does not support the <code>audio</code> element. <a id="audio-alt" href="audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3">Download</a>
+        </audio>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div id="carouselDark" class="carousel carousel-dark slide" data-bs-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active pt-3"> <!-- 0 -->
+            <img loading="lazy" class="d-block img-cover" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover">
+          </div>
+
+          <div class="carousel-item pt-3"> <!-- 1 -->
+            <img loading="lazy" class="d-block img-cover img-cover-bg" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover">
+            <div class="carousel-caption">
+              <div class="row">
+                <div class="col-lg-4 mt-1 ps-5">
+                  <div class="ps-4">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-start track">
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="2" onclick="tracksAudioSet(0)"><span class="badge border">1</span> Time's goin by</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="3" onclick="tracksAudioSet(1)"><span class="badge border">2</span> Girl and boy</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="4" onclick="tracksAudioSet(2)"><span class="badge border">3</span> Vinaigre</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="5" onclick="tracksAudioSet(3)"><span class="badge border">4</span> I'll be here</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="6" onclick="tracksAudioSet(4)"><span class="badge border">5</span> One more year</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="7" onclick="tracksAudioSet(5)"><span class="badge border">6</span> It's time for you</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="8" onclick="tracksAudioSet(6)"><span class="badge border">7</span> Virus</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="9" onclick="tracksAudioSet(7)"><span class="badge border">8</span> Alien</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="10" onclick="tracksAudioSet(8)"><span class="badge border">9</span> Bad joke</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="11" onclick="tracksAudioSet(9)"><span class="badge border">10</span> Mystery girl</a></li>
+<li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="12" onclick="tracksAudioSet(10)"><span class="badge border">11</span> A very good mum</a></li>
+                  </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center mt-4">
+                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2021-TimesRoll-mp3.zip" class="badge text-dark border border-dark"><i class="fas fa-download"></i> mp3</a>
+                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2021-TimesRoll-wav.zip" class="badge text-dark border border-dark"><i class="fas fa-download"></i> wav</a>
+                  </div>
+                  <ul class="list-unstyled py-4">
+                    <li>
+                      <div class="row py-0 ps-4 text-start">
+                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/HernandezAlain.jpg" alt="Alain Hernandez"></div>
+                        <div class="col-sm-9 py-2"><h6 class="mb-0">Alain HERNANDEZ</h6><div class="small lh-sm">
+Paroles et musique,<br>
+Chant, choeurs,<br>
+Guitare acoustique,<br>
+Clavier, Programmation,<br>
+Percussions
+                        </div></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row py-0 pe-4 text-end">
+                        <div class="col-sm-9 py-2"><h6 class="mb-0">Nicolas HUERRE</h6><div class="small lh-sm">
+Guitare électrique,<br>
+Basse, guitare acoustique,<br>
+Production, mixage, mastering
+                        </div></div>
+                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/HuerreNico.jpg" alt="Nicolas HUERRE"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row py-0 ps-4 text-start">
+                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/BolivarRegis.jpg" alt="Régis BOLIVARD"></div>
+                        <div class="col-sm-9 py-2"><h6 class="mb-0">Régis BOLIVARD</h6><div class="small lh-sm">Batterie</div></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row py-0 pe-4 text-end">
+                        <div class="col-sm-9 py-2"><h6 class="mb-0">Margot HUERRE</h6><div class="small lh-sm">Violon sur "I’ll be here"</div></div>
+                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/HuerreMargot.jpg" alt="Margot HUERRE"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="row py-0 ps-4 text-start">
+                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/GononGillesBraudDenis.jpg" alt="Margot HUERRE"></div>
+                        <div class="col-sm-9 py-2"><h6 class="mb-1">Gilles GONON, Denis BRAUD</h6><div class="small lh-sm">Conception graphique</div></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 mt-3 text-end pe-5">
+                  <div class="pe-4">
+                  <h6 class="mt-2 mb-0">Enregistrement</h6>
+                  <div class="small lh-sm">Studio Secrétan, Studio La Fosse</div>
+                  <h6 class="mt-2 mb-0">Arrangements, mixage</h6>
+                  <div class="small lh-sm">Studio La Fosse (été 2021)</div>
+                  <h6 class="mt-2 mb-0">Crédits Pochette</h6><div class="small lh-sm">
+                    <a title="Pochette - Murray Campbell" href="https://unsplash.com/photos/B_TdfGFuGwA" target="_blank" rel="noopener" class="text-secondary">Murray Campbell</a>
+                    on <a href="https://unsplash.com" class="text-secondary">Unsplash</a>
+                    </div>
+                  <h6 class="mt-2 mb-0">Crédits Dessins</h6><div class="small lh-sm">
+                    <a title="Ann Henderson - Time's goin by" href="https://www.pinterest.co.kr/pin/232216924521522932/" target="_blank" rel="noopener" class="text-secondary">Ann Henderson</a>,
+                    <a title="Archzine - Girl and boy" href="https://archzine.fr/wp-content/uploads/2019/01/exemple-dessin-couple-graphique-re%CC%81alise%CC%81-au-crayon-fille-et-garc%CC%A7on-dessin-noir-et-blanc-romantique-a-dessiner-soi-meme.jpg" target="_blank" rel="noopener" class="text-secondary">Archzine</a>,<br>
+                    <a title="NationalGeographic - Vinaigre" href="https://www.nationalgeographic.fr/video/tv/ces-cafards-jouent-les-karatekas-pour-ne-pas-se-faire-zombifier" target="_blank" rel="noopener" class="text-secondary">NationalGeographic</a>,<br>
+                    <a title="Raimonds Zarins - I'll be here" href="https://www.pngitem.com/middle/iJbTmR_people-silhouette-at-getdrawings-father-and-son-holding/" target="_blank" rel="noopener" class="text-secondary">Raimonds Zarins</a>,<br>
+                    <a title="Vecteezy - One more year" href="https://www.vecteezy.com/vector-art/2889647-cartoon-man-is-in-jail-and-very-sad-vector-illustration" target="_blank" rel="noopener" class="text-secondary">Vecteezy</a>,
+                    <a title="Ahmad Safarudin - It's time for you" href="https://fr.vecteezy.com/art-vectoriel/2100289-dessin-de-ligne-continue-de-saut-homme-heureux-jeune-attrayant-homme-saut-regarde-heureux-et-la-liberte-isolee-sur-fond-blanc-realisation-et-reve-de-succes-concept-illustration-croquis-vectorielle" target="_blank" rel="noopener" class="text-secondary">Ahmad Safarudin</a>,<br>
+                    <a title="PngTree - Virus" href="https://fr.pngtree.com/freepng/black-and-white-gradient-virus-3d-element_5339014.html" target="_blank" rel="noopener" class="text-secondary">PngTree</a>,
+                    <a title="ColoriageEtDessins - Alien" href="https://www.coloriageetdessins.com/autres/extraterrestre/alien-le-film-27948" target="_blank" rel="noopener" class="text-secondary">ColoriageEtDessins</a>,<br>
+                    <a title="Intueri - Bad joke" href="https://fr.123rf.com/photo_84742396_tatouage-ouest-sauvage-et-design-de-t-shirt-revolver-cartes-%C3%A0-jouer-belle-fille-art-de-tatouage-%C3%A0-la-bom.html" target="_blank" rel="noopener" class="text-secondary">Intueri</a>,
+                    <a title="Fesleen - Mystery girl" href="https://fr.123rf.com/photo_88252364_shaman-hippie-fille-avec-des-cheveux-fleuris-all%C3%A9gorie-de-l-aurore-bor%C3%A9ale-islandaise-.html" target="_blank" rel="noopener" class="text-secondary">Fesleen</a>,
+                    <a title="Groseille - A very good mum" href="https://www.bonnemaman.ch/uploads/blog_article_image/Groseille_Bonne_Maman_Coloriage_PetitDejeuner_Colors_PhotosArticleBlog.jpg" target="_blank" rel="noopener" class="text-secondary">Groseille</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 2 -->
+            <div class="carousel-caption">
+              <h4>Time's goin by</h4>
+              <p><a onclick="tracksAudioSet(0)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Little lovely girl, little pretty girl
+                  <br>Little lovely girl, oh little girl
+                  <br>
+                  <br>One summer day, You came to stay
+                  <br>You little girl into our world
+                  <br>Your pretty face, Your magic grace
+                  <br>Your secret smile, Your magic eyes
+                  <br>
+                  <br>Oh little blue eyed girl
+                  <br>Oh go and change the world
+                  <br>
+                  <br>So you’re grown and you are gone
+                  <br>You little girl to face the world
+                  <br>You find a chumb, so you’ll be Mum
+                  <br>Strong in this world, My little girl, 
+                  <br>Little lovely girl…
+                  <br>
+                  <br>Oh little blue eyed girl
+                  <br>Oh go and change the world
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.png" class="my-2 img-fluid rounded w-75" alt="Track1">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Brand new day, Years away
+                  <br>When I try, look behind
+                  <br>Times go by
+                  <br>One more day, On my way
+                  <br>Wind had blown when I was young
+                  <br>I’m gettin’ old
+                  <br>
+                  <br>But I had to carry on
+                  <br>A little baby’s here to come
+                  <br>Maybe boy or maybe girl
+                  <br>He she will be part of my world
+                  <br>
+                  <br>So you could smile, You could cry
+                  <br>No matter tears, no matter fears
+                  <br>I’ll be here
+                  <br>Girl or boy, You’ll give joy
+                  <br>I am waitin’ for your comin’
+                  <br>In the spring
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 3 -->
+            <div class="carousel-caption">
+              <h4>Girl and boy</h4>
+              <p><a onclick="tracksAudioSet(1)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>She’s not the girl used to be glad
+                  <br>She’s the girl used to be sad
+                  <br>He’s not the boy who used to smile
+                  <br>He’s the boy who’s used to cry, used to cry
+                  <br>
+                  <br>He’s not the boy with the golden touch
+                  <br>He’s not the boy who speaks too much
+                  <br>She’s not the girl used to get fine
+                  <br>She’s the girl used to be so shy, to be shy
+                  <br>
+                  <br>Little lonely boy, little lonely girl
+                  <br>Lookin’ for the love all around the world
+                  <br>Little lonely girl so sad on her own
+                  <br>Little lonely boy in an old cold empty home
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-02-GirlAndBoy.jpg" class="my-2 img-fluid rounded w-75" alt="Track2">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>He’s not the boy used to be leader
+                  <br>He’s the boy used to be looser
+                  <br>She’s not the girl used to brast about
+                  <br>She’s not the girl used to brag about, brag about
+                  <br>
+                  <br>Little lonely girl, little lonely boy
+                  <br>All around the world waitin’ for some joy
+                  <br>Little lonely boy so sad on his own
+                  <br>Little lonely girl in a frozen empty home…
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 4 -->
+            <div class="carousel-caption">
+              <h4>Vinaigre</h4>
+              <p><a onclick="tracksAudioSet(2)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Sometimes I had enough
+                  <br>You treat me like a child
+                  <br>Well you had to know
+                  <br>You’re not always right
+                  <br>You’ve got to respect
+                  <br>All the people you are with
+                  <br>Oh we could make it better
+                  <br>We could break the freeze
+                  <br>
+                  <br>Oh well it’s true that many times
+                  <br>I’m doin’ mistakes
+                  <br>But it’s not a reason
+                  <br>To get your eyes of snake
+                  <br>You’ve got to learn
+                  <br>What runs in mind of man
+                  <br>The worst could get happen
+                  <br>If we only just can blame
+                  <br>
+                  <br>We can get it out,
+                  <br>We can make it clearer
+                  <br>One thing we can do
+                  <br>Is to learn to hear
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-03-Vinaigre.jpg" class="my-2 img-fluid rounded w-75" alt="Track3">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>What makes you angry
+                  <br>Is not the same for everyone
+                  <br>What makes you glad
+                  <br>Can make so sad another one
+                  <br>I know sometimes it’s hard
+                  <br>To understand the other
+                  <br>But we had to try
+                  <br>And situation will be better
+                  <br>
+                  <br>And now if we don’t move
+                  <br>We'll never get go farther
+                  <br>And I’m sure we’ll regret
+                  <br>When we get much older
+                  <br>We’ve got to join our forces
+                  <br>And try the best that we can do
+                  <br>And everything will be all right
+                  <br>Oh yes for me and you
+                  <br>
+                  <br>We had just to listen
+                  <br>And understand the other
+                  <br>Open up our eyes
+                  <br>Make the life much better…
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 5 -->
+            <div class="carousel-caption">
+              <h4>I'll be here</h4>
+              <p><a onclick="tracksAudioSet(3)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>I am laughin’
+                  <br>I am cryin’
+                  <br>I am waitin’
+                  <br>
+                  <br>I feel lonely
+                  <br>I’m so hurry
+                  <br>I’m so worry
+                  <br>
+                  <br>Sweet little baby
+                  <br>You don’t know me
+                  <br>Sleep little darlin’
+                  <br>Quiet in your sleep
+                  <br>
+                  <br>I’ll be here
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.jpg" class="my-2 img-fluid rounded w-75" alt="Track4">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>June is comin’
+                  <br>Baby’s smilin’
+                  <br>As I’m singin’
+                  <br>
+                  <br>Words of wisdom
+                  <br>Words of freedom
+                  <br>Be the welcome
+                  <br>
+                  <br>You little baby
+                  <br>Soon you will come
+                  <br>My little baby
+                  <br>You’ll never be alone
+                  <br>
+                  <br>I’ll be here
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 6 -->
+            <div class="carousel-caption">
+              <h4>One more year</h4>
+              <p><a onclick="tracksAudioSet(4)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>An year had past
+                  <br>It’s still the same
+                  <br>We stay at home
+                  <br>Sad on our own
+                  <br>An year had past
+                  <br>We’re gettin’ mad
+                  <br>An year had come
+                  <br>We die alone
+                  <br>In hospital or at home
+                  <br>An year had past
+                  <br>We’re gettin’ mad
+                  <br>
+                  <br>But all around the world
+                  <br>Every boy and every girl
+                  <br>They can’t have a kiss
+                  <br>They can’t get a bliss
+                  <br>Tell me what’s goin’ on here down on earth
+                  <br>Tell me what’s goin’ on in this old wild world
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.jpg" class="my-2 img-fluid rounded w-75" alt="Track5">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Another year
+                  <br>We’re gettin’ feared
+                  <br>An year had past
+                  <br>We get afraid
+                  <br>An year had past
+                  <br>We’re gettin’ mad
+                  <br>An year had come
+                  <br>We’re all alone
+                  <br>All the people 
+                  <br>Jailed at home
+                  <br>An year had past
+                  <br>We’re gettin’ mad
+                  <br>
+                  <br>But all around the world
+                  <br>Every boy and every girl
+                  <br>They can’t have a kiss
+                  <br>They can’t get a bliss
+                  <br>Tell me what’s goin’ on here down on earth
+                  <br>Tell me what’s goin’ on in this old wild world
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 7 -->
+            <div class="carousel-caption">
+              <h4>It's time for you</h4>
+              <p><a onclick="tracksAudioSet(5)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>A brand new day
+                  <br>It’s time to wake up,
+                  <br>Get out of your bed, of your bed
+                  <br>Maybe your day
+                  <br>You’ve got to move on,
+                  <br>Get it in your head, in your head
+                  <br>
+                  <br>Look at the skies
+                  <br>And you will forget of your cries
+                  <br>Look at the sun
+                  <br>And if you can you’ll get some fun
+                  <br>Look at the earth
+                  <br>It’s like an everlasting birth
+                  <br>A world of joy
+                  <br>If you want it little boy
+                  <br>It’s a world of joy
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.jpg" class="my-2 img-fluid rounded w-75" alt="Track6">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Another day
+                  <br>Hurry up oh boy
+                  <br>Please don’t be late, don’t be late
+                  <br>Well it’s your day
+                  <br>Don’t be afraid
+                  <br>Oh boy don’t wait again, wait again
+                  <br>
+                  <br>Look at the moon
+                  <br>And you will get to walk on soon
+                  <br>Look at the seas
+                  <br>And you will feel a little breeze
+                  <br>Look at the earth
+                  <br>It’s like an everlasting birth
+                  <br>A world of joy
+                  <br>If you want it little boy
+                  <br>It’s a world of joy
+                  <br>
+                  <br>Well it’s time for you
+                  <br>To know something new
+                  <br>Well it’s time for you
+                  <br>I guess it’s true…
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 8 -->
+            <div class="carousel-caption">
+              <h4>Virus</h4>
+              <p><a onclick="tracksAudioSet(6)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p> Sun keeps to shine, up in the sky
+                  <br>The weather’s fine, world seems so quiet
+                  <br>Birds in the trees, sweet melodies
+                  <br>A lovely breeze’s here to appease
+                  <br>
+                  <br>But in the city there’s nobody
+                  <br>Everyone is hided and so worry
+                  <br>A sudden panic wind had blown
+                  <br>Everyone is stuck at home all alone
+                  <br>Stuck at home</p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-07-Virus.jpg" class="my-2 img-fluid rounded w-75" alt="Track8">
+                </div> 
+                <div class="col-lg-6 col-xl-4">
+                  <p>Stars keep to shine, up in the sky
+                  <br>The moon is right, world seems so quiet
+                  <br>And trough the night, a satellite
+                  <br>Up in the sky, all seems so quiet
+                  <br>      
+                  <br>But in town streets are empty
+                  <br>All the people get so worry
+                  <br>A ugly panic wind had blown
+                  <br>Everyone is stuck at home all alone
+                  <br>Stuck at home…</p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="carousel-item"> <!-- 9 -->
+            <div class="carousel-caption">
+              <h4>Alien</h4>
+              <p><a onclick="tracksAudioSet(7)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>An alien came, keeps on crawlin’
+                  <br>All over the land, an alien’s flyin’
+                  <br>An alien’s there, keeps on soarin’
+                  <br>Here and everywhere, keepin’ snackin’
+                  <br>
+                  <br>Late at night in your bed
+                  <br>Trough the night get afraid
+                  <br>In your room, in the gloom
+                  <br>You’re afraid
+                  <br>Late at night under sheet
+                  <br>Trough the night you get feared
+                  <br>In your room, in the gloom
+                  <br>Everywhere anywhere
+                  <br>An alien’s there
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-08-Alien.jpg" class="my-2 img-fluid rounded w-75" alt="Track9">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Alien came down, keeps on growin’
+                  <br>All over the ground, an alien’s spreadin’
+                  <br>Alien gets in, here and everywhere
+                  <br>Keepin’ on creepin’, an alien’s everywhere
+                  <br>
+                  <br>
+                  <br>Late at night in your bed
+                  <br>Trough the night get afraid
+                  <br>In your room, in the gloom
+                  <br>You’re afraid
+                  <br>Late at night under sheet
+                  <br>Trough the night you get feared
+                  <br>In your room, in the gloom
+                  <br>Everywhere anywhere
+                  <br>An alien’s there
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 10 -->
+            <div class="carousel-caption">
+              <h4>Bad joke</h4>
+              <p><a onclick="tracksAudioSet(8)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>The trubbles begun as he started to run
+                  <br>In his hand a gun,
+                  <br>He could say goodbye to fun
+                  <br>But everything was right
+                  <br>He didn’t want make her cry
+                  <br>She was the best in his life
+                  <br>Hello the very good time
+                  <br>
+                  <br>She’s waitin’ for him at home drinkin’ her gin
+                  <br>When he’s gone she told
+                  <br>"Jim, you’re strong like you’ve never been"
+                  <br>He was so cool and so fine
+                  <br>He’ll come back late at night
+                  <br>He was dreamin’ of blue sky
+                  <br>It was the color of her eyes
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-09-BadJoke.jpg" class="my-2 img-fluid rounded w-75" alt="Track10">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Poor boy you’ve got to know
+                  <br>You’d better have to go
+                  <br>So get out of here
+                  <br>But you seem so merry
+                  <br>You find life so easy
+                  <br>So get out of here
+                  <br>Oh poor boy if you knew
+                  <br>You’d better find a clue
+                  <br>So get out of here
+                  <br>You’d better hurry up
+                  <br>You’d better move on up
+                  <br>
+                  <br>So get out of here
+                  <br>He thought of his Mum
+                  <br>But it was time to come home
+                  <br>One thing he didn’t know
+                  <br>Her girlfriend was the law
+                  <br>
+                  <br>The trubbles begun as he started to run
+                  <br>In his hand a gun,
+                  <br>He could say goodbye to fun
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 11 -->
+            <div class="carousel-caption">
+              <h4>Mystery girl</h4>
+              <p><a onclick="tracksAudioSet(9)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>She was livin’ on the mountain top
+                  <br>She was known as the queen of the Bebop
+                  <br>She got two cats and a couple of dogs
+                  <br>She’s never drunk she never took drugs
+                  <br>
+                  <br>Quietly livin’ in her home sweet home
+                  <br>She used to cook for her Daddy and Mum
+                  <br>Laid in grass lookin’ up to the sky
+                  <br>She seemed so lost in her pretty smile
+                  <br>
+                  <br>Oh mystery girl
+                  <br>Mystery girl
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.jpg" class="my-2 img-fluid rounded w-75" alt="Track11">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>She used to walk on the mountain fields
+                  <br>Some people say she’s the fool on the hill
+                  <br>I don’t believe I know it’s not real
+                  <br>As I saw her she gave me a thrill
+                  <br>
+                  <br>Oh mystery girl
+                  <br>Mystery girl
+                  <br>
+                  <br>Mystery girl let me live in your world
+                  <br>Mystery girl I will love you
+                  <br>For the best and the worst…
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"> <!-- 12 -->
+            <div class="carousel-caption">
+              <h4>A very good mum</h4>
+              <p><a onclick="tracksAudioSet(10)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>As the mornin’ comes she is out of bed
+                  <br>She’s about gettin’ dressed
+                  <br>Put her shoes on she’s runnin’ to the kitchen
+                  <br>Cookin’ breakfast for the children
+                  <br>
+                  <br>Is the homework really done
+                  <br>She thinks about it as the radio’s on
+                  <br>Is the baby still asleep
+                  <br>Cause she don’t like to break his dream
+                  <br>
+                  <br>She’s a very good Mum
+                  <br>She’s the best of million all around
+                  <br>She’s the sun
+                  <br>She’ll be there till the world go round
+                  <br>Mm mm mm
+                  <br>She’s a very very very good Mum
+                  <br>Oh yes she is
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.jpg" class="my-2 img-fluid rounded w-75" alt="Track12">
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>As coffee’s boilin’, she’s doin’ the cleanin’
+                  <br>And the children do their washin’
+                  <br>Around the table everyone has a smile
+                  <br>Give her a kiss and say goodbye
+                  <br>
+                  <br>Will the school day be allright
+                  <br>She thinks about it and she’s not quiet
+                  <br>As she drags a comb across her head
+                  <br>She’s lookin’ up now she is late
+                  <br>
+                  <br>She’s a very good Mum
+                  <br>She’s the best of million all around
+                  <br>She’s the sun
+                  <br>She’ll be there till the world go round
+                  <br>Mm mm mm
+                  <br>She’s a very very very good Mum
+                  <br>Oh yes she is…
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+          <i class="fas fa-backward" aria-hidden="true"></i>
+          <span class="visually-hidden">Morceau précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+          <i class="fas fa-forward" aria-hidden="true"></i>
+          <span class="visually-hidden">Morceau suivant</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container text-center small">
+      <a href="https://muffinszebulon.github.io/"><img src="favicon-32x32.png" width="14" height="14" alt="Muffin's Zebulon" class="opacity-75"/> 2021</a> ·
+      <a href="sitemap.html">Plan du site</a> ·
+      <a href="mentionslegales.html">Mentions légales</a>
+    </div>
+  </footer>
+  <a role="button" id="share-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Partager"><span class="fas fa-share-alt"></span></a>
+  <a href="#" id="backtotop-button" title="Retourner en haut de page"><span class="fas fa-angle-up"></span></a>
+
+  <script src="2021-TimesRoll.js"></script>
+  <script src="audio.js"></script>
+  <script src="share.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

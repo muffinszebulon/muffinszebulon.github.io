@@ -33,6 +33,17 @@
     </image:image>
 </url>
 <url>
+    <loc>https://muffinszebulon.github.io/2000-MuffinsZebulon.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/2000-MuffinsZebulon.html"/>
+    <lastmod>2021-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2000-MuffinsZebulon.jpg</image:loc>
+        <image:title>Muffin's Zebulon - Muffin's Zebulon (2000)</image:title>
+    </image:image>
+</url>
+<url>
     <loc>https://muffinszebulon.github.io/sitemap.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/sitemap.html"/>
     <lastmod>2021-08-30</lastmod>

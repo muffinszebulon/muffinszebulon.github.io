@@ -1,0 +1,55 @@
+.container-fluid {
+  padding:0;
+}
+
+.carousel-item {
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-caption {
+  position: relative;
+  top:0rem;
+  left:0%;
+  right:0%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  align-items: start !important;
+  bottom: auto;
+}
+
+.carousel-control-prev { padding: 1rem 5% 5% 0.75rem; }
+.carousel-control-next { padding: 1rem 0.75rem 5% 5%; }
+.carousel-control-prev i,.carousel-control-next i { color: #000 !important; }
+
+.navbar-brand {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  line-height: 0.8em;
+}
+
+.navbar-brand .small {
+  font-size: 0.7em;
+  color:#fff;
+}
+
+.navbar-collapse {
+  background-color: #ddd !important;
+}
+.navbar-collapse .nav-link {
+  color: #000 !important;
+}
+.img-cover {
+  width: 75vh;
+  max-width: 90%;
+  margin:auto;
+}
+
+.img-cover-bg {
+  position: absolute;
+  left: max(5%, calc((100vw - 75vh) / 2));
+  opacity: 0.2;
+}

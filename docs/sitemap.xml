@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+    <loc>https://muffinszebulon.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/"/>
+    <lastmod>2021-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png</image:loc>
+        <image:title>Muffin's Zebulon</image:title>
+    </image:image>
+</url>
+<url>
+    <loc>https://muffinszebulon.github.io/sitemap.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/sitemap.html"/>
+    <lastmod>2021-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+    <image:image>
+        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png</image:loc>
+        <image:title>Muffin's Zebulon</image:title>
+    </image:image>
+</url>
+<url>
+    <loc>https://muffinszebulon.github.io/mentionslegales.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/mentionslegales.html"/>
+    <lastmod>2021-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+    <image:image>
+        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png</image:loc>
+        <image:title>Muffin's Zebulon</image:title>
+    </image:image>
+</url>
+</urlset>

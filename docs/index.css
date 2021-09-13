@@ -1,0 +1,26 @@
+.bg-dark {
+  background-color: #000 !important;
+}
+
+nav {
+  background-image: url("./images/MuffinsZebulon-header.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 20vw;
+  min-height: 150px;
+}
+
+.navbar-brand {
+  background-color:#000;
+  color:#fff;
+  padding : 1rem;
+}
+
+.navbar-toggler {
+  background-color:#000;
+  color:#fff;
+}
+
+.navbar-collapse {
+  background-color:#000;
+}

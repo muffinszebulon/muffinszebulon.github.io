@@ -1,0 +1,3 @@
+User-Agent: *
+Sitemap: https://muffinszebulon.github.io/sitemap.xml
+

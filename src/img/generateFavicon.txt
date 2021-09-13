@@ -1,0 +1,23 @@
+XCF > SVG
+http://www.useragentman.com/blog/2013/04/26/how-to-create-svg-paths-easily-using-the-gimp/
+
+-----------------
+SVG > favicons
+https://realfavicongenerator.net/ (v0.16)
+
+Favicon for iOS - Web Clip
+background color #ffffff
+
+Windows Metro
+background color #ffffff
+
+macOS Safari
+ThemeColor : #666666
+
+Favicon Generator Options
+App Name : Muffin's Zebulon
+
+-----------------
+Maskable Icons
+https://web.dev/maskable-icon/
+https://maskable.app/editor

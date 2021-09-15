@@ -13,7 +13,7 @@
             "type": "image/png"
         },
         {
-            "src": "/maskable_icon_x192.png",
+            "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "maskable"
@@ -21,5 +21,29 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "start_url": "/index.html?source=pwa",
+    "shortcuts": [
+        {
+            "name": "Times & Roll (2021)",
+            "short_name": "Times & Roll",
+            "description": "Muffin's Zebulon - Times & Roll (2021)",
+            "url": "/2021-TimesRoll.html?source=pwa",
+            "icons": [{ "src": "/images/MuffinsZebulon-2021-TimesRoll_192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "After all the story goes (2010)",
+            "short_name": "After all the story goes",
+            "description": "Muffin's Zebulon - After all the story goes (2010)",
+            "url": "/2010-AfterAllTheStoryGoes.html?source=pwa",
+            "icons": [{ "src": "/images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg", "sizes": "192x192" }]
+        },
+        {
+            "name": "Muffin's Zebulon (2000)",
+            "short_name": "Muffin's Zebulon",
+            "description": "Muffin's Zebulon - Muffin's Zebulon (2000)",
+            "url": "/2000-MuffinsZebulon.html?source=pwa",
+            "icons": [{ "src": "/images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg", "sizes": "192x192" }]
+        }
+    ]
 }

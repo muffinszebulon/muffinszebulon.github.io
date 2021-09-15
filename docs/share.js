@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   const shareButton = document.getElementById('share-button');
   const canonicalElt = document.querySelector('link[rel=canonical]'); 

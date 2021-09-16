@@ -14,5 +14,10 @@
   "bugs": {
     "url": "https://github.com/muffinszebulon/muffinszebulon.github.io/issues"
   },
-  "homepage": "https://github.com/muffinszebulon/muffinszebulon.github.io#readme"
+  "homepage": "https://github.com/muffinszebulon/muffinszebulon.github.io#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2"
+  }
 }

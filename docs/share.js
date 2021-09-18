@@ -1,18 +1,18 @@
-window.addEventListener("load", () => {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
+window.addEventListener('load', () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
   const shareButton = document.getElementById('share-button');
   const canonicalElt = document.querySelector('link[rel=canonical]'); 
   if (navigator && navigator.share) {
-    shareButton.title = "Partager";
+    shareButton.title = 'Partager';
   } else if (navigator && navigator.clipboard) {
     shareButton.title = "Copier l'URL";
   } else {
-    shareButton.title = "Partager via Mail";
+    shareButton.title = 'Partager via Mail';
   }
   var shareTooltip = new bootstrap.Tooltip(shareButton);
 
@@ -35,7 +35,7 @@ function setTooltipTitle(tooltip, button, title) {
   if (!tooltip || !button || !title) {
     return;
   }
-  button.title = "URL copiée";
+  button.title = 'URL copiée';
   tooltip.dispose();
   tooltip = new bootstrap.Tooltip(button);
   tooltip.show();

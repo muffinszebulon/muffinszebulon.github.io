@@ -1,51 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
-  var audio = document.getElementById('audio');
-  audio.addEventListener('ended', function(event) {
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('audio');
+  audio.addEventListener('ended', (event) => {
     tracksAudioNext();
   });
 
-  var baseTitle = document.title;
-  var url = document.location.href;
-  var baseUrl = url.indexOf("?") >= 0 ? url.split("?")[0] : url;
+  const baseTitle = document.title;
+  const url = document.location.href;
+  const baseUrl = url.indexOf('?') >= 0 ? url.split('?')[0] : url;
 
-  var canonicalElt = document.querySelector('link[rel=canonical]'); 
-  var carousel = document.getElementById('carouselDark');
-  var carouselBs = bootstrap.Carousel.getOrCreateInstance(carousel);
+  const canonicalElt = document.querySelector('link[rel=canonical]');
+  const carousel = document.getElementById('carouselDark');
+  const carouselBs = bootstrap.Carousel.getOrCreateInstance(carousel);
 
-  let slideIndexParam = getParameter("slide");
+  const slideIndexParam = getParameter('slide');
   if (slideIndexParam) {
     carouselBs.to(slideIndexParam);
   }
 
-  var self = this;
-  carousel.addEventListener('slid.bs.carousel', function (event) {
-    let slideIndex = event.to;
-    let trackIndex = slideIndex - 2; 
+  const self = this;
+  carousel.addEventListener('slid.bs.carousel', (event) => {
+    const slideIndex = event.to;
+    const trackIndex = slideIndex - 2;
     if (slideIndex === 1) {
-      canonicalElt.href = baseUrl + "?slide=" + slideIndex;
-      document.title = baseTitle + " - Crédits";
-    } else if (trackIndex >=0 && trackIndex < self.tracks.length) {
-      var track = self.tracks[trackIndex];
-      canonicalElt.href = baseUrl + "?slide=" + slideIndex;
-      document.title = baseTitle + " - " + track.title;
+      canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
+      document.title = `${baseTitle} - Crédits`;
+    } else if (trackIndex >= 0 && trackIndex < self.tracks.length) {
+      const track = self.tracks[trackIndex];
+      canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
+      document.title = `${baseTitle} - ${track.title}`;
     } else {
       canonicalElt.href = baseUrl;
       document.title = baseTitle;
     }
   });
-  
 });
 
 function tracksAudioSet(trackIndex) {
-  var track = this.tracks[trackIndex];
-  var audio = document.getElementById('audio');
-  audio.src = "audio/"+track.file;
+  const track = this.tracks[trackIndex];
+  const audio = document.getElementById('audio');
+  audio.src = `audio/${track.file}`;
   audio.play();
 
-  var audioAlt = document.getElementById('audio-alt');
-  audioAlt.href = "audio/"+track.file;
+  const audioAlt = document.getElementById('audio-alt');
+  audioAlt.href = `audio/${track.file}`;
 
-  var audioTitle = document.getElementById('audio-title');
+  const audioTitle = document.getElementById('audio-title');
   audioTitle.textContent = track.title;
 
   this.trackCurrentIndex = trackIndex;
@@ -73,24 +72,24 @@ function tracksAudioPrev() {
  * @returns {String} parameter value
  */
 function getParameter(name, uri) {
-  var allParams = location.search;
+  let allParams = location.search;
   if (uri) {
-    var pos = uri.indexOf("?");
+    const pos = uri.indexOf('?');
     if (pos == -1) {
-      return "";
+      return '';
     }
     allParams = uri.substring(pos);
   }
   if (!allParams) {
-    return "";
+    return '';
   }
-  allParams = "&" + allParams.substring(1);
-  name = "&" + name + "=";
-  var value = "";
-  var posDeb = allParams.indexOf(name);
+  allParams = `&${allParams.substring(1)}`;
+  name = `&${name}=`;
+  let value = '';
+  let posDeb = allParams.indexOf(name);
   if (posDeb > -1) {
     posDeb += name.length;
-    var posFin = allParams.indexOf("&", posDeb);
+    let posFin = allParams.indexOf('&', posDeb);
     if (posFin == -1) {
       posFin = allParams.length;
     }

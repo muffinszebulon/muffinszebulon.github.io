@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
           new Request('images/MuffinsZebulon-2021-TimesRoll_192.png', { cache: 'reload' }),
           new Request('images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg', { cache: 'reload' }),
           new Request('images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg', { cache: 'reload' }),
-  
+
           new Request('2000-MuffinsZebulon.css', { cache: 'reload' }),
           new Request('2000-MuffinsZebulon.html', { cache: 'reload' }),
           new Request('2000-MuffinsZebulon.js', { cache: 'reload' }),
@@ -41,7 +41,7 @@ self.addEventListener('install', (event) => {
           new Request('index.css', { cache: 'reload' }),
           new Request('index.html', { cache: 'reload' }),
           new Request('share.js', { cache: 'reload' }),
-  
+
           new Request('audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3', { cache: 'reload' }),
           new Request('audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3', { cache: 'reload' }),
           new Request('audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3', { cache: 'reload' }),
@@ -70,7 +70,7 @@ self.addEventListener('activate', (event) => {
     (async () => {
       try {
         const keys = await caches.keys();
-        for (let key of keys) {
+        for (const key of keys) {
           if (CACHES.includes(key)) {
             await caches.delete(key);
           }

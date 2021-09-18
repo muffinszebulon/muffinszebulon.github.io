@@ -1,5 +1,4 @@
-const trackCurrentIndex = 0;
-const tracks = [
+document.tracks = [
   { title: 'Thank you to be here', file: 'MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3' },
   { title: 'King for a day', file: 'MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3' },
   { title: 'Bitterness', file: 'MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3' },

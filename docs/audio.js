@@ -1,42 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const audio = document.getElementById('audio');
-  audio.addEventListener('ended', (event) => {
-    tracksAudioNext();
-  });
-
-  const baseTitle = document.title;
-  const url = document.location.href;
-  const baseUrl = url.indexOf('?') >= 0 ? url.split('?')[0] : url;
-
-  const canonicalElt = document.querySelector('link[rel=canonical]');
-  const carousel = document.getElementById('carouselDark');
-  const carouselBs = bootstrap.Carousel.getOrCreateInstance(carousel);
-
-  const slideIndexParam = getParameter('slide');
-  if (slideIndexParam) {
-    carouselBs.to(slideIndexParam);
-  }
-
-  const self = this;
-  carousel.addEventListener('slid.bs.carousel', (event) => {
-    const slideIndex = event.to;
-    const trackIndex = slideIndex - 2;
-    if (slideIndex === 1) {
-      canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
-      document.title = `${baseTitle} - Crédits`;
-    } else if (trackIndex >= 0 && trackIndex < self.tracks.length) {
-      const track = self.tracks[trackIndex];
-      canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
-      document.title = `${baseTitle} - ${track.title}`;
-    } else {
-      canonicalElt.href = baseUrl;
-      document.title = baseTitle;
-    }
-  });
-});
+var trackCurrentIndex = 0;
 
 function tracksAudioSet(trackIndex) {
-  const track = this.tracks[trackIndex];
+  const track = document.tracks[trackIndex];
   const audio = document.getElementById('audio');
   audio.src = `audio/${track.file}`;
   audio.play();
@@ -51,17 +16,29 @@ function tracksAudioSet(trackIndex) {
 }
 
 function tracksAudioNext() {
-  this.trackCurrentIndex = ++this.trackCurrentIndex % this.tracks.length;
+  this.trackCurrentIndex = ++this.trackCurrentIndex % document.tracks.length;
   tracksAudioSet(this.trackCurrentIndex);
 }
 
 function tracksAudioPrev() {
   if (this.trackCurrentIndex === 0) {
-    this.trackCurrentIndex = this.tracks.length - 1;
+    this.trackCurrentIndex = document.tracks.length - 1;
   } else {
     this.trackCurrentIndex--;
   }
   tracksAudioSet(this.trackCurrentIndex);
+}
+
+function tracksSlideTo(slideIndex) {
+  const carousel = document.getElementById('carouselDark');
+  const carouselBs = bootstrap.Carousel.getOrCreateInstance(carousel);
+  if (slideIndex) {
+    carouselBs.to(slideIndex);
+  }
+}
+
+function tracksSlideToCurrent() {
+  tracksSlideTo(this.trackCurrentIndex + 2);
 }
 
 /**
@@ -75,7 +52,7 @@ function getParameter(name, uri) {
   let allParams = location.search;
   if (uri) {
     const pos = uri.indexOf('?');
-    if (pos == -1) {
+    if (pos === -1) {
       return '';
     }
     allParams = uri.substring(pos);
@@ -84,13 +61,13 @@ function getParameter(name, uri) {
     return '';
   }
   allParams = `&${allParams.substring(1)}`;
-  name = `&${name}=`;
+  const nameParam = `&${name}=`;
   let value = '';
-  let posDeb = allParams.indexOf(name);
+  let posDeb = allParams.indexOf(nameParam);
   if (posDeb > -1) {
-    posDeb += name.length;
+    posDeb += nameParam.length;
     let posFin = allParams.indexOf('&', posDeb);
-    if (posFin == -1) {
+    if (posFin === -1) {
       posFin = allParams.length;
     }
     value = allParams.substring(posDeb, posFin);
@@ -98,3 +75,34 @@ function getParameter(name, uri) {
   value = decodeURIComponent(value);
   return value;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('audio');
+  audio.addEventListener('ended', () => {
+    tracksAudioNext();
+  });
+
+  this.tracksSlideTo(getParameter('slide'));
+
+  const baseTitle = document.title;
+  const url = document.location.href;
+  const baseUrl = url.indexOf('?') >= 0 ? url.split('?')[0] : url;
+  const canonicalElt = document.querySelector('link[rel=canonical]');
+
+  const carousel = document.getElementById('carouselDark');
+  carousel.addEventListener('slid.bs.carousel', (event) => {
+    const slideIndex = event.to;
+    const trackIndex = slideIndex - 2;
+    if (slideIndex === 1) {
+      canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
+      document.title = `${baseTitle} - Crédits`;
+    } else if (trackIndex >= 0 && trackIndex < document.tracks.length) {
+      const track = document.tracks[trackIndex];
+      canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
+      document.title = `${baseTitle} - ${track.title}`;
+    } else {
+      canonicalElt.href = baseUrl;
+      document.title = baseTitle;
+    }
+  });
+});

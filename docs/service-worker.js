@@ -72,13 +72,13 @@ self.addEventListener('activate', (event) => {
         const keys = await caches.keys();
         for (const key of keys) {
           if (CACHES.includes(key)) {
-            await caches.delete(key);
+            caches.delete(key);
           }
         }
       } catch (error) {
         console.log(error);
       }
-    })()
+    })(),
   );
   // Tell the active service worker to take control of the page immediately.
   self.clients.claim();
@@ -104,6 +104,6 @@ self.addEventListener('fetch', (event) => {
         console.log(error);
         return caches.match(OFFLINE_URL); // cachedResponse
       }
-    })()
+    })(),
   );
 });

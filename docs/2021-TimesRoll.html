@@ -50,8 +50,8 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover" width="40" height="40" class="p-0 m-0">
       </button>
-      <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
-        <ul class="navbar-nav track">
+      <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
+        <ul class="navbar-nav small py-3 track">
           <li class="nav-item"><a class="nav-link" data-bs-target="#carouselDark" data-bs-slide-to="0">
             <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll.png"  alt="Cover" width="25" height="25" class="float-start me-1">
             <b>Times & Roll</b> (2021)
@@ -69,6 +69,12 @@
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="11" onclick="tracksAudioSet(9)"><span class="badge border">10</span> Mystery girl</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="12" onclick="tracksAudioSet(10)"><span class="badge border">11</span> A very good mum</a></li>
         </ul>
+        <div id="divInstall" class="d-none">
+          <hr class="text-black px-0 mx-0 my-0">
+          <ul class="navbar-nav small">
+            <li class="nav-item py-3" id=""><a id="buttonInstall" class="nav-link active" role="button"><i class="fas fa-download"></i> Télécharger App. <span class="small text-muted">(écoute hors ligne)</span></a></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -780,6 +786,7 @@ Production, mixage, mastering
 
   <script src="2021-TimesRoll.js"></script>
   <script src="audio.js"></script>
+  <script src="pwa.js"></script>
   <script src="share.js"></script>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

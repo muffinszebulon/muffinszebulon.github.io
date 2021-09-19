@@ -9,53 +9,66 @@ const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
 const CACHES = [CACHE_STATIC, CACHE_DYNAMIC];
 const OFFLINE_URL = 'offline.html';
+const CACHED_URLS = [
+  OFFLINE_URL,
+  'favicon-32x32.png',
+  'images/MuffinsZebulon-header.jpg',
+  'images/MuffinsZebulon-2021-TimesRoll_192.png',
+  'images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg',
+  'images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg',
+
+  '2000-MuffinsZebulon.css',
+  '2000-MuffinsZebulon.html',
+  '2000-MuffinsZebulon.js',
+  '2010-AfterAllTheStoryGoes.css',
+  '2010-AfterAllTheStoryGoes.html',
+  '2010-AfterAllTheStoryGoes.js',
+  '2021-TimesRoll.css',
+  '2021-TimesRoll.html',
+  '2021-TimesRoll.js',
+  'audio.js',
+  'common-album.css',
+  'common.css',
+  'index.css',
+  'index.html',
+  'share.js',
+
+  'audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-07-Virus.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-08-Alien.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-09-BadJoke.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3',
+  'audio/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3',
+];
+
+async function addUrlToCache(cache, url) {
+  try {
+    console.log(`cache add ${url}`);
+    // Setting {cache: 'reload'} in the new request will ensure that
+    // the response isn't fulfilled from the HTTP cache;
+    // i.e., it will be from the network.
+    await cache.add(new Request(url, { cache: 'reload' }));
+  } catch (error) {
+    console.log(url, error);
+  }
+}
 
 self.addEventListener('install', (event) => {
+  console.log('event install');
   event.waitUntil(
     (async () => {
       try {
         const cache = await caches.open(CACHE_STATIC);
-        // Setting {cache: 'reload'} in the new request will ensure that
-        // the response isn't fulfilled from the HTTP cache;
-        // i.e., it will be from the network.
-        await cache.addAll([
-          new Request(OFFLINE_URL, { cache: 'reload' }),
-          new Request('favicon-32x32.png', { cache: 'reload' }),
-          new Request('images/MuffinsZebulon-header.jps', { cache: 'reload' }),
-          new Request('images/MuffinsZebulon-2021-TimesRoll_192.png', { cache: 'reload' }),
-          new Request('images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg', { cache: 'reload' }),
-          new Request('images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg', { cache: 'reload' }),
-
-          new Request('2000-MuffinsZebulon.css', { cache: 'reload' }),
-          new Request('2000-MuffinsZebulon.html', { cache: 'reload' }),
-          new Request('2000-MuffinsZebulon.js', { cache: 'reload' }),
-          new Request('2010-AfterAllTheStoryGoes.css', { cache: 'reload' }),
-          new Request('2010-AfterAllTheStoryGoes.html', { cache: 'reload' }),
-          new Request('2010-AfterAllTheStoryGoes.js', { cache: 'reload' }),
-          new Request('2021-TimesRoll.css', { cache: 'reload' }),
-          new Request('2021-TimesRoll.html', { cache: 'reload' }),
-          new Request('2021-TimesRoll.js', { cache: 'reload' }),
-          new Request('audio.js', { cache: 'reload' }),
-          new Request('common-album.css', { cache: 'reload' }),
-          new Request('common.css', { cache: 'reload' }),
-          new Request('index.css', { cache: 'reload' }),
-          new Request('index.html', { cache: 'reload' }),
-          new Request('share.js', { cache: 'reload' }),
-
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-07-Virus.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-08-Alien.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-09-BadJoke.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3', { cache: 'reload' }),
-          new Request('audio/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3', { cache: 'reload' }),
-        ]);
+        for (const url of CACHED_URLS) {
+          this.addUrlToCache(cache, url);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -66,13 +79,15 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
+  console.log('event activate');
   event.waitUntil(
     (async () => {
       try {
-        const keys = await caches.keys();
-        for (const key of keys) {
-          if (CACHES.includes(key)) {
-            caches.delete(key);
+        const cacheNames = await caches.keys();
+        for (const cacheName of cacheNames) {
+          if (!CACHES.includes(cacheName)) {
+            console.log(`cache delete ${cacheName}`);
+            caches.delete(cacheName);
           }
         }
       } catch (error) {
@@ -94,11 +109,16 @@ self.addEventListener('fetch', (event) => {
         }
         const cachedResponse = await caches.match(request);
         if (cachedResponse) {
+          console.log(`response from cache for ${request.url}`);
           return cachedResponse;
         }
         const networkResponse = await fetch(request);
-        const cache = await caches.open(CACHE_DYNAMIC);
-        await cache.put(request, networkResponse.clone());
+        console.log(`response from network for ${request.url} (status: ${networkResponse.status} type:${networkResponse.type})`);
+        if (networkResponse && networkResponse.status === 200) {
+          console.log(`add response to cache for ${request.url}`);
+          const cache = await caches.open(CACHE_DYNAMIC);
+          await cache.put(request, networkResponse.clone());
+        }
         return networkResponse;
       } catch (error) {
         console.log(error);

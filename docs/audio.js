@@ -1,4 +1,5 @@
 var trackCurrentIndex = 0;
+var baseTitle = document.title;
 
 async function tracksAudioSet(trackIndex) {
   const audio = document.getElementById('audio');
@@ -16,6 +17,7 @@ async function tracksAudioSet(trackIndex) {
     trackCurrentIndex = trackIndex;
 
     await audio.play();
+    document.title = `${track.title} - ${baseTitle}`;
   } catch (error) {
     audioError.classList.toggle('d-none', false);
     console.error(audio.src, error);
@@ -94,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   this.tracksSlideTo(getParameter('slide'));
 
-  const baseTitle = document.title;
+  baseTitle = document.title;
   const url = document.location.href;
   const baseUrl = url.indexOf('?') >= 0 ? url.split('?')[0] : url;
   const canonicalElt = document.querySelector('link[rel=canonical]');
@@ -105,11 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackIndex = slideIndex - 2;
     if (slideIndex === 1) {
       canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
-      document.title = `${baseTitle} - Crédits`;
+      document.title = `Crédits - ${baseTitle}`;
     } else if (trackIndex >= 0 && trackIndex < document.tracks.length) {
       const track = document.tracks[trackIndex];
       canonicalElt.href = `${baseUrl}?slide=${slideIndex}`;
-      document.title = `${baseTitle} - ${track.title}`;
+      document.title = `${track.title} - ${baseTitle}`;
     } else {
       canonicalElt.href = baseUrl;
       document.title = baseTitle;

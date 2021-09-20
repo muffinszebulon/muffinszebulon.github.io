@@ -7,7 +7,8 @@
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm-run-all lint test:*",
+    "test:todo": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

@@ -25,19 +25,19 @@ function showDivInstall() {
 
   const buttonInstall = document.getElementById('buttonInstall');
   buttonInstall.addEventListener('click', async () => {
-    if (!this.deferredPrompt) {
+    if (!deferredPrompt) {
       return;
     }
     // Hide the app provided install promotion
     hideDivInstall();
     // Show the install prompt
-    this.deferredPrompt.prompt();
+    deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
-    const { outcome } = await this.deferredPrompt.userChoice;
+    const { outcome } = await deferredPrompt.userChoice;
     // Optionally, send analytics event with outcome of user choice
     console.log(`User response to the install prompt: ${outcome}`);
     // We've used the prompt, and can't use it again, throw it away
-    this.deferredPrompt = null;
+    deferredPrompt = null;
   });
 }
 
@@ -45,7 +45,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   // Prevent the mini-infobar from appearing on mobile
   event.preventDefault();
   // Stash the event so it can be triggered later.
-  this.deferredPrompt = event;
+  deferredPrompt = event;
   // Update UI notify the user they can install the PWA
   showDivInstall();
   // Optionally, send analytics event that PWA install promo was shown.
@@ -56,7 +56,7 @@ window.addEventListener('appinstalled', (event) => {
   // Hide the app-provided install promotion
   hideDivInstall();
   // Clear the deferredPrompt so it can be garbage collected
-  this.deferredPrompt = null;
+  deferredPrompt = null;
   // Optionally, send analytics event to indicate successful install
   console.log('PWA was installed', event);
 });

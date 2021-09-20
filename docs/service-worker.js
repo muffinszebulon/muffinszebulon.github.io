@@ -3,6 +3,7 @@
  * https://web.dev/offline-fallback-page/<br>
  * https://gist.github.com/adactio/fbaa3a5952774553f5e7<br>
  * https://googlechrome.github.io/samples/service-worker/basic/<br>
+ * check : chrome://serviceworker-internals<br>
  */
 const VERSION = '1';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
@@ -67,12 +68,12 @@ self.addEventListener('install', (event) => {
       try {
         const cache = await caches.open(CACHE_STATIC);
         for (const url of CACHED_URLS) {
-          this.addUrlToCache(cache, url);
+          addUrlToCache(cache, url);
         }
       } catch (error) {
         console.log(error);
       }
-    })(),
+    })()
   );
   // Force the waiting service worker to become the active service worker.
   self.skipWaiting();
@@ -93,7 +94,7 @@ self.addEventListener('activate', (event) => {
       } catch (error) {
         console.log(error);
       }
-    })(),
+    })()
   );
   // Tell the active service worker to take control of the page immediately.
   self.clients.claim();
@@ -104,7 +105,8 @@ self.addEventListener('fetch', (event) => {
     (async () => {
       try {
         const request = event.request;
-        if (request.method !== 'GET') { // Always fetch non-GET requests from the network
+        if (request.method !== 'GET') {
+          // Always fetch non-GET requests from the network
           return fetch(request); // networkResponse
         }
         const cachedResponse = await caches.match(request);
@@ -114,7 +116,7 @@ self.addEventListener('fetch', (event) => {
         }
         const networkResponse = await fetch(request);
         console.log(`response from network for ${request.url} (status: ${networkResponse.status} type:${networkResponse.type})`);
-        if (networkResponse && networkResponse.status === 200) {
+        if (networkResponse && networkResponse.status !== 500) {
           console.log(`add response to cache for ${request.url}`);
           const cache = await caches.open(CACHE_DYNAMIC);
           await cache.put(request, networkResponse.clone());
@@ -124,6 +126,6 @@ self.addEventListener('fetch', (event) => {
         console.log(error);
         return caches.match(OFFLINE_URL); // cachedResponse
       }
-    })(),
+    })()
   );
 });

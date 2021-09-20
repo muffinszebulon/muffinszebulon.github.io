@@ -1,22 +1,31 @@
+'use strict';
+
 module.exports = {
+  parserOptions: {
+    ecmaVersion: 12,
+  },
   env: {
     browser: true,
     es2021: true,
   },
   globals: {
-    "bootstrap": false,
-    "getElementById": false,
+    bootstrap: false,
+    getElementById: false,
   },
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
-  parserOptions: {
-    ecmaVersion: 12,
-  },
-  rules: {
-    'prettier/prettier': 0,
-    'object-shorthand': 0,
-    'prefer-destructuring': 0,
-    'no-restricted-globals': 0,
-    'no-restricted-syntax': 0,
-  },
+  rules: {},
+  overrides: [
+    // node files
+    {
+      files: ['.eslintrc.js', '.prettierrc.js'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+      env: {
+        browser: false,
+        node: true,
+      },
+    },
+  ],
 };

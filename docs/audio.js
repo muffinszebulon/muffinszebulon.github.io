@@ -12,21 +12,23 @@ function tracksAudioSet(trackIndex) {
   const audioTitle = document.getElementById('audio-title');
   audioTitle.textContent = track.title;
 
-  this.trackCurrentIndex = trackIndex;
+  trackCurrentIndex = trackIndex;
 }
 
+/* exported tracksAudioNext */
 function tracksAudioNext() {
-  this.trackCurrentIndex = ++this.trackCurrentIndex % document.tracks.length;
-  tracksAudioSet(this.trackCurrentIndex);
+  trackCurrentIndex = ++trackCurrentIndex % document.tracks.length;
+  tracksAudioSet(trackCurrentIndex);
 }
 
+/* exported tracksAudioPrev */
 function tracksAudioPrev() {
-  if (this.trackCurrentIndex === 0) {
-    this.trackCurrentIndex = document.tracks.length - 1;
+  if (trackCurrentIndex === 0) {
+    trackCurrentIndex = document.tracks.length - 1;
   } else {
-    this.trackCurrentIndex--;
+    trackCurrentIndex--;
   }
-  tracksAudioSet(this.trackCurrentIndex);
+  tracksAudioSet(trackCurrentIndex);
 }
 
 function tracksSlideTo(slideIndex) {
@@ -37,8 +39,9 @@ function tracksSlideTo(slideIndex) {
   }
 }
 
+/* exported tracksSlideToCurrent */
 function tracksSlideToCurrent() {
-  tracksSlideTo(this.trackCurrentIndex + 2);
+  tracksSlideTo(trackCurrentIndex + 2);
 }
 
 /**

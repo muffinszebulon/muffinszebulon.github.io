@@ -1,18 +1,25 @@
 var trackCurrentIndex = 0;
 
-function tracksAudioSet(trackIndex) {
-  const track = document.tracks[trackIndex];
+async function tracksAudioSet(trackIndex) {
   const audio = document.getElementById('audio');
-  audio.src = `audio/${track.file}`;
-  audio.play();
-
   const audioAlt = document.getElementById('audio-alt');
-  audioAlt.href = `audio/${track.file}`;
-
   const audioTitle = document.getElementById('audio-title');
-  audioTitle.textContent = track.title;
+  const audioError = document.getElementById('audio-error');
+  try {
+    audioError.classList.toggle('d-none', true);
 
-  trackCurrentIndex = trackIndex;
+    const track = document.tracks[trackIndex];
+    audio.src = `audio/${track.file}`;
+    audioAlt.href = `audio/${track.file}`;
+    audioTitle.textContent = track.title;
+
+    trackCurrentIndex = trackIndex;
+
+    await audio.play();
+  } catch (error) {
+    audioError.classList.toggle('d-none', false);
+    console.error(audio.src, error);
+  }
 }
 
 /* exported tracksAudioNext */

@@ -7,7 +7,7 @@ window.addEventListener('load', async () => {
       console.log('Service workers are not supported.');
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
 

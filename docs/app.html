@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000">
+  <meta name="author" content="Gilles Gonon, Denis Braud">
+  <meta name="description" content="Application Infos · Téléchargement (permet une écoute hors ligne)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Application Muffin's Zebulon">
+  <meta property="og:description" content="Application Infos · Téléchargement (permet une écoute hors ligne)">
+  <meta property="og:site_name" content="Muffin's Zebulon">
+  <meta property="og:country-name" content="France">
+  <meta property="og:url" content="https://muffinszebulon.github.io/app.html">
+  <meta name="robots" content="index,follow">
+  <title>Application Muffin's Zebulon</title>
+  <link rel="canonical" href="https://muffinszebulon.github.io/app.html">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#666666">
+  <meta name="apple-mobile-web-app-title" content="Muffin's Zebulon">
+  <meta name="application-name" content="Muffin's Zebulon">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="common.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img loading="lazy" src="favicon-rondblanc.png" alt="MZ" class="float-start me-2" width="24" height="24"> Muffin's Zebulon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
+        <ul class="navbar-nav small pb-3">
+          <li class="nav-item"><a class="nav-link active" href="2021-TimesRoll.html"><img src="images/MuffinsZebulon-2021-TimesRoll_192.png" alt="3ème album" width="20" height="20"> Times & Roll <span class="small text-muted">(2021)</span></a></li>
+          <li class="nav-item"><a class="nav-link active" href="2010-AfterAllTheStoryGoes.html"><img src="images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg" alt="2ème album" width="20" height="20"> After all the story goes <span class="small text-muted">(2010)</span></a></li>
+          <li class="nav-item"><a class="nav-link active" href="2000-MuffinsZebulon.html"><img src="images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg" alt="1er album" width="20" height="20"> Muffin's Zebulon <span class="small text-muted">(2000)</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+<h2 class="mt-4">Application Infos</h2>
+<div class="small mt-3">
+  <div class="mb-3">Version <span id="version"></span> (septembre 2021)
+    <a role="button" onclick="reset();" title="Réinitialiser"><span class="fas fa-sync-alt mx-2"></span></a></div>
+  <div><button type="button" id="buttonInstall" class="btn btn-secondary d-none" onclick="install(event)" disabled><span class="fas fa-download"></span> Installer App</button></div>
+  <div id="pwa-message" class="mb-3">Vérification de compatibilité en cours...</div>
+</div>
+
+<div class="toggleCache d-none">
+  <h5 class="mb-0">Téléchargement</h5>
+  <div class="small lh-1 mb-3"><small><em>(permet une écoute hors ligne)</em></small></div>
+
+  <!-- 3 .............................................. -->
+  <div class="row small">
+    <div class="col-3 col-md-2 col-lg-1 pt-2">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="toggleCacheA3" onchange="toggleCache(event, 'A3')">
+        <label class="form-check-label" for="toggleCacheA3"><img src="images/MuffinsZebulon-2021-TimesRoll_192.png" class="rounded" alt="album" width="40" height="40"></label>
+      </div>
+    </div>
+    <div class="col-8 col-md-9 col-lg-10 pt-2">
+      <div class="progress"><div id="toggleCacheProgressA3" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>
+    </div>
+    <div class="col-1 pt-2">
+      <a id="toggleCacheA3Detail" data-bs-toggle="collapse" href="#cacheA3Detail" role="button" aria-expanded="false" aria-controls="cacheA3Detail" aria-expanded="false"
+        class="accordion-button collapsed py-0 ps-0"></a>
+    </div>
+  </div>
+  <div id="cacheA3Detail" class="collapse mb-3" aria-labelledby="toggleCacheA3Detail">
+  </div>
+  <!-- 2 .............................................. -->
+  <div class="row small">
+    <div class="col-3 col-md-2 col-lg-1 pt-2">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="toggleCacheA2" onchange="toggleCache(event, 'A2')" disabled>
+        <label class="form-check-label" for="toggleCacheA2"><img src="images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg" class="rounded" alt="album" width="40" height="40"></label>
+      </div>
+    </div>
+    <div class="col-8 col-md-9 col-lg-10 pt-2">
+      <div class="progress">
+        <div id="toggleCacheProgressA2" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+      </div>
+    </div>
+    <div class="col-1 pt-2">
+      <a id="toggleCacheA2Detail" data-bs-toggle="collapse" href="#cacheA2Detail" role="button" aria-expanded="false" aria-controls="cacheA2Detail" aria-expanded="false"
+        class="accordion-button collapsed py-0 ps-0"></a>
+    </div>
+  </div>
+  <div id="cacheA2Detail" class="collapse mb-3" aria-labelledby="toggleCacheA2Detail">
+  </div>
+  <!-- 1 .............................................. -->
+  <div class="row small">
+    <div class="col-3 col-md-2 col-lg-1 pt-2">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="toggleCacheA1" onchange="toggleCache(event, 'A1')"  disabled>
+        <label class="form-check-label" for="toggleCacheA1"><img src="images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg" class="rounded" alt="album" width="40" height="40"></label>
+      </div>
+    </div>
+    <div class="col-8 col-md-9 col-lg-10 pt-2">
+      <div class="progress">
+        <div id="toggleCacheProgressA1" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+      </div>
+    </div>
+    <div class="col-1 pt-2">
+      <a id="toggleCacheA1Detail" data-bs-toggle="collapse" href="#cacheA1Detail" role="button" aria-expanded="false" aria-controls="cacheA1Detail" aria-expanded="false"
+        class="accordion-button collapsed py-0 ps-0"></a>
+    </div>
+  </div>
+  <div id="cacheA1Detail" class="collapse mb-3" aria-labelledby="toggleCacheA1Detail">
+  </div>
+</div>
+
+<div class="storage d-none">
+  <h5 class="mt-3">Stockage</h5>
+  <p id="storage" class="small mb-2"></p>
+  <div class="mb-3"><a role="button" onclick="reset(true);" class="small py-3"><span class="fas fa-trash"></span> Effacer toutes les données</a><br><br></div>
+</div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container text-center small">
+      <a href="https://muffinszebulon.github.io/"><img src="favicon-32x32.png" width="14" height="14" alt="Muffin's Zebulon" class="opacity-75"/> 2021</a> ·
+      <a href="sitemap.html">Plan</a> ·
+      <a href="mentionslegales.html">Mentions légales</a>
+      <a href="app.html" class="badge border ms-1 p-2">App <span class="fas fa-info-circle"></span></a>
+    </div>
+  </footer>
+  <a role="button" id="share-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Partager"><span class="fas fa-share-alt"></span></a>
+  <a href="#" id="backtotop-button" title="Retourner en haut de page"><span class="fas fa-angle-up"></span></a>
+
+  <script src="pwa.js"></script>
+  <script src="share.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

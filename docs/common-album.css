@@ -21,9 +21,9 @@
   bottom: auto;
 }
 
-.carousel-control-prev { padding: 1rem 5% 5% 0.75rem; }
-.carousel-control-next { padding: 1rem 0.75rem 5% 5%; }
-.carousel-control-prev i,.carousel-control-next i { color: #000 !important; }
+.carousel-control-prev { padding: 1.5rem 3rem 3rem 0.3rem; }
+.carousel-control-next { padding: 1.5rem 0.3rem 3rem 3rem; }
+.carousel-control-prev span,.carousel-control-next span { color: #000 !important; }
 
 .navbar-brand {
   margin-right: auto !important;
@@ -45,6 +45,7 @@
 .img-cover {
   width: 75vh;
   max-width: 90%;
+  height: auto;
   margin:auto;
 }
 

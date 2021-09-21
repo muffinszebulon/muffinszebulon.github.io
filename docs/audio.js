@@ -19,6 +19,8 @@ async function tracksAudioSet(trackIndex) {
     await audio.play();
     document.title = `${track.title} - ${baseTitle}`;
   } catch (error) {
+    audioError.innerHTML =
+      'MP3 non disponible,<br>téléchargeable en ligne sur la page<a href="app.html" class="badge border ms-1 p-2">App <span class="fas fa-info-circle"></span></a>';
     audioError.classList.toggle('d-none', false);
     console.error(audio.src, error);
   }

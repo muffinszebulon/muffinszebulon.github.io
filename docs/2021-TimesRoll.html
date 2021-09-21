@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000">
   <meta name="author" content="Gilles Gonon, Denis Braud">
-  <meta name="description" content="Times & Roll (2021) - Muffin's Zebulon">
+  <meta name="description" content="[1] Time's goin by [2] Vinaigre [3] Girl and boy [4] I'll be here [5] One more year [6] It's time for you [7] Virus [8] Alien [9] Bad joke [10] Mystery girl [11] A very good mum">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Times & Roll (2021) - Muffin's Zebulon">
-  <meta property="og:description" content="Times & Roll (2021) - Muffin's Zebulon">
+  <meta property="og:description" content="[1] Time's goin by [2] Vinaigre [3] Girl and boy [4] I'll be here [5] One more year [6] It's time for you [7] Virus [8] Alien [9] Bad joke [10] Mystery girl [11] A very good mum">
   <meta property="og:site_name" content="Muffin's Zebulon">
   <meta property="og:country-name" content="France">
   <meta property="og:url" content="https://muffinszebulon.github.io/2021-TimesRoll.html">
@@ -42,19 +42,19 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark bg-dark pt-2 pb-0">
+  <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid">
-      <a href="index.html" class="p-0 ms-2"><img loading="lazy" src="favicon-rondblanc.png" alt="Home" width="40" height="40"></a>
-      <a class="navbar-brand text-center" role="button" data-bs-target="#carouselDark" data-bs-slide-to="1">Muffin's Zebulon<br><span class="small text-white">Times & Roll</span></a>
-      <button class="navbar-toggler me-2 p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      <a href="index.html" class="p-2"><img loading="lazy" src="favicon-rondblanc.png" alt="Home" width="40" height="40"></a>
+      <a class="navbar-brand text-center pb-1 pt-3" role="button" data-bs-target="#carouselDark" data-bs-slide-to="1">Muffin's Zebulon<br><span class="small text-white">Times & Roll</span></a>
+      <button class="navbar-toggler p-2 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover" width="40" height="40" class="p-0 m-0">
+        <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll_192.png" alt="Cover" width="40" height="40" class="p-0">
       </button>
       <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
         <ul class="navbar-nav small py-3 track">
-          <li class="nav-item"><a class="nav-link" data-bs-target="#carouselDark" data-bs-slide-to="0">
-            <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll.png"  alt="Cover" width="25" height="25" class="float-start me-1">
-            <b>Times & Roll</b> (2021)
+          <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="0">
+            <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll_192.png"  alt="Cover" width="25" height="25" class="float-start me-1">
+            <strong>Times & Roll</strong> (2021)
           </a></li>
           <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="1">Crédits</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="2" onclick="tracksAudioSet(0)"><span class="badge border">1</span> Time's goin by</a></li>
@@ -69,39 +69,33 @@
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="11" onclick="tracksAudioSet(9)"><span class="badge border">10</span> Mystery girl</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="12" onclick="tracksAudioSet(10)"><span class="badge border">11</span> A very good mum</a></li>
         </ul>
-        <div id="divInstall" class="d-none">
-          <hr class="text-black px-0 mx-0 my-0">
-          <ul class="navbar-nav small">
-            <li class="nav-item py-3" id=""><a id="buttonInstall" class="nav-link active" role="button"><i class="fas fa-download"></i> Télécharger App. <span class="small text-muted">(écoute hors ligne)</span></a></a></li>
-          </ul>
-        </div>
       </div>
     </div>
   </nav>
   <main>
     <div class="bg-dark text-white p-0 m-0 pt-1">
-      <div class="row p-0 pb-2 m-0">
-        <div class="col-2"><a onclick="tracksAudioPrev()" role="button" class="text-white p-1" title="Morceau précédent"><i class="fas fa-backward"></i></a></div>
-        <div class="col text-center"><a onclick="tracksSlideToCurrent()" role="button"><strong id="audio-title">Time's goin by</strong></a></div>
-        <div class="col-2 text-end pe-2"><a onclick="tracksAudioNext()" role="button" class="text-white p-1" title="Morceau suivant"><i class="fas fa-forward"></i></a></div>
+      <div class="row p-0 m-0">
+        <div onclick="tracksAudioPrev()" role="button" title="Morceau précédent" class="col-2 pt-0 pb-2 ps-2 text-light"><span class="fas fa-chevron-left"></span></div>
+        <div onclick="tracksSlideToCurrent()" role="button" title="Paroles" class="col text-center pb-2"><strong id="audio-title">Time's goin by</strong></div>
+        <div onclick="tracksAudioNext()" role="button" title="Morceau suivant" class="col-2 pt-0 pb-2 pe-2 text-light text-end"><span class="fas fa-chevron-right"></span></div>
       </div>
       <div class="text-center p-0 m-0 pb-1">
         <audio id="audio" src="audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3" controls="" class="bg-light rounded-pill">
           <a id="audio-alt" href="audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3">Download</a>
         </audio>
-        <div id="audio-error" class="small d-none">MP3 non téléchargé, disponible à la prochaine connexion.</div>
+        <div id="audio-error" class="d-none"></div>
       </div>
     </div>
     <div class="container-fluid">
       <div id="carouselDark" class="carousel carousel-dark slide" data-bs-interval="false">
         <div class="carousel-inner">
           <div class="carousel-item active pt-3"> <!-- 0 -->
-            <img loading="lazy" class="d-block img-cover" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover">
+            <img loading="lazy" class="d-block img-cover" src="images/MuffinsZebulon-2021-TimesRoll.png" width="1024" height="1024" alt="Cover">
           </div>
 
           <div class="carousel-item pt-3"> <!-- 1 -->
-            <img loading="lazy" class="d-block img-cover img-cover-bg" src="images/MuffinsZebulon-2021-TimesRoll.png" alt="Cover">
-            <div class="carousel-caption">
+            <img loading="lazy" class="d-block img-cover img-cover-bg" src="images/MuffinsZebulon-2021-TimesRoll.png" width="1024" height="1024" alt="Cover">
+            <div class="carousel-caption pt-1">
               <div class="row">
                 <div class="col-lg-4 mt-1 ps-5">
                   <div class="ps-4">
@@ -118,14 +112,17 @@
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="11" onclick="tracksAudioSet(9)"><span class="badge border">10</span> Mystery girl</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="12" onclick="tracksAudioSet(10)"><span class="badge border">11</span> A very good mum</a></li>
                   </ul>
+                  <div class=""><br></div>
                   </div>
                 </div>
-                <div class="col-lg-4">
-                  <div class="text-center mt-4">
-                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2021-TimesRoll-mp3.zip" class="badge text-dark border border-dark"><i class="fas fa-download"></i> mp3</a>
-                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2021-TimesRoll-wav.zip" class="badge text-dark border border-dark"><i class="fas fa-download"></i> wav</a>
+                <div class="col-lg-4 pt-2">
+                  <div class="text-center">
+                    <small>Téléchargement</small><br>
+                    <a href="app.html" class="badge bg-white p-2 border text-dark border-dark"><span class="fas fa-angle-right"></span> App <span class="fas fa-info-circle"></span></a>
+                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2021-TimesRoll-mp3.zip" class="badge bg-white p-2 border text-dark border-dark apphidden"><span class="fas fa-download"></span> mp3</a>
+                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2021-TimesRoll-wav.zip" class="badge bg-white p-2 border text-dark border-dark apphidden"><span class="fas fa-download"></span> wav</a>
                   </div>
-                  <ul class="list-unstyled py-4">
+                  <ul class="list-unstyled py-5">
                     <li>
                       <div class="row py-0 ps-4 text-start">
                         <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/HernandezAlain.jpg" alt="Alain Hernandez"></div>
@@ -168,7 +165,7 @@ Production, mixage, mastering
                     </li>
                   </ul>
                 </div>
-                <div class="col-lg-4 mt-3 text-end pe-5">
+                <div class="col-lg-4 mt-0 text-end pe-5">
                   <div class="pe-4">
                   <h6 class="mt-2 mb-0">Enregistrement</h6>
                   <div class="small lh-sm">Studio Secrétan, Studio La Fosse</div>
@@ -200,7 +197,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 2 -->
             <div class="carousel-caption">
               <h4>Time's goin by</h4>
-              <p><a onclick="tracksAudioSet(0)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(0)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>Little lovely girl, little pretty girl
@@ -225,7 +222,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.png" class="my-2 img-fluid rounded w-75" alt="Track1">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.png" class="img-fluid rounded w-75" alt="Track1"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>Brand new day, Years away
@@ -257,7 +254,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 3 -->
             <div class="carousel-caption">
               <h4>Vinaigre</h4>
-              <p><a onclick="tracksAudioSet(1)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(1)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row">
                 <div class="col-lg-6 col-xl-4">
                   <p>Sometimes I had enough
@@ -285,7 +282,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.jpg" class="my-2 img-fluid rounded w-75" alt="Track3">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.jpg" class="img-fluid rounded w-75" alt="Track2"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>What makes you angry
@@ -321,7 +318,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 4 -->
             <div class="carousel-caption">
               <h4>Girl and boy</h4>
-              <p><a onclick="tracksAudioSet(2)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(2)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>She’s not the girl used to be glad
@@ -341,7 +338,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.jpg" class="my-2 img-fluid rounded w-75" alt="Track2">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.jpg" class="img-fluid rounded w-75" alt="Track3"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>He’s not the boy used to be leader
@@ -364,7 +361,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 5 -->
             <div class="carousel-caption">
               <h4>I'll be here</h4>
-              <p><a onclick="tracksAudioSet(3)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(3)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>I am laughin’
@@ -384,7 +381,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.jpg" class="my-2 img-fluid rounded w-75" alt="Track4">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.jpg" class="img-fluid rounded w-75" alt="Track4"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>June is comin’
@@ -412,7 +409,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 6 -->
             <div class="carousel-caption">
               <h4>One more year</h4>
-              <p><a onclick="tracksAudioSet(4)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(4)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>An year had past
@@ -436,7 +433,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.jpg" class="my-2 img-fluid rounded w-75" alt="Track5">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.jpg" class="img-fluid rounded w-75" alt="Track5"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>Another year
@@ -469,7 +466,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 7 -->
             <div class="carousel-caption">
               <h4>It's time for you</h4>
-              <p><a onclick="tracksAudioSet(5)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(5)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>A brand new day
@@ -491,7 +488,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.jpg" class="my-2 img-fluid rounded w-75" alt="Track6">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.jpg" class="img-fluid rounded w-75" alt="Track6"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>Another day
@@ -526,7 +523,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 8 -->
             <div class="carousel-caption">
               <h4>Virus</h4>
-              <p><a onclick="tracksAudioSet(6)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(6)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p> Sun keeps to shine, up in the sky
@@ -541,7 +538,7 @@ Production, mixage, mastering
                   <br>Stuck at home</p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-07-Virus.jpg" class="my-2 img-fluid rounded w-75" alt="Track8">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-07-Virus.jpg" class="img-fluid rounded w-75" alt="Track7"></p>
                 </div> 
                 <div class="col-lg-6 col-xl-4">
                   <p>Stars keep to shine, up in the sky
@@ -564,7 +561,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 9 -->
             <div class="carousel-caption">
               <h4>Alien</h4>
-              <p><a onclick="tracksAudioSet(7)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(7)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>An alien came, keeps on crawlin’
@@ -584,7 +581,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-08-Alien.jpg" class="my-2 img-fluid rounded w-75" alt="Track9">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-08-Alien.jpg" class="img-fluid rounded w-75" alt="Track8"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>Alien came down, keeps on growin’
@@ -613,7 +610,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 10 -->
             <div class="carousel-caption">
               <h4>Bad joke</h4>
-              <p><a onclick="tracksAudioSet(8)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(8)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>The trubbles begun as he started to run
@@ -634,7 +631,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-09-BadJoke.jpg" class="my-2 img-fluid rounded w-75" alt="Track10">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-09-BadJoke.jpg" class="img-fluid rounded w-75" alt="Track9"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>Poor boy you’ve got to know
@@ -669,7 +666,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 11 -->
             <div class="carousel-caption">
               <h4>Mystery girl</h4>
-              <p><a onclick="tracksAudioSet(9)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(9)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>She was livin’ on the mountain top
@@ -687,7 +684,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.jpg" class="my-2 img-fluid rounded w-75" alt="Track11">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.jpg" class="img-fluid rounded w-75" alt="Track10"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>She used to walk on the mountain fields
@@ -712,7 +709,7 @@ Production, mixage, mastering
           <div class="carousel-item"> <!-- 12 -->
             <div class="carousel-caption">
               <h4>A very good mum</h4>
-              <p><a onclick="tracksAudioSet(10)" role="button" class="text-dark"><i class="fas fa-play"></i>&nbsp;&nbsp;Écouter</a></p>
+              <p><a onclick="tracksAudioSet(10)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-xl-4">
                   <p>As the mornin’ comes she is out of bed
@@ -735,7 +732,7 @@ Production, mixage, mastering
                   </p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
-                  <img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.jpg" class="my-2 img-fluid rounded w-75" alt="Track12">
+                  <p><img loading="lazy" src="images/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.jpg" class="img-fluid rounded w-75" alt="Track11"></p>
                 </div>
                 <div class="col-lg-6 col-xl-4">
                   <p>As coffee’s boilin’, she’s doin’ the cleanin’
@@ -765,11 +762,11 @@ Production, mixage, mastering
         </div>
         <!-- controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
-          <i class="fas fa-backward" aria-hidden="true"></i>
+          <span class="fas fa-chevron-left" aria-hidden="true"></span>
           <span class="visually-hidden">Morceau précédent</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
-          <i class="fas fa-forward" aria-hidden="true"></i>
+          <span class="fas fa-chevron-right" aria-hidden="true"></span>
           <span class="visually-hidden">Morceau suivant</span>
         </button>
       </div>
@@ -778,8 +775,9 @@ Production, mixage, mastering
   <footer class="footer">
     <div class="container text-center small">
       <a href="https://muffinszebulon.github.io/"><img src="favicon-32x32.png" width="14" height="14" alt="Muffin's Zebulon" class="opacity-75"/> 2021</a> ·
-      <a href="sitemap.html">Plan du site</a> ·
+      <a href="sitemap.html">Plan</a> ·
       <a href="mentionslegales.html">Mentions légales</a>
+      <a href="app.html" class="badge border ms-1 p-2">App <span class="fas fa-info-circle"></span></a>
     </div>
   </footer>
   <a role="button" id="share-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Partager"><span class="fas fa-share-alt"></span></a>

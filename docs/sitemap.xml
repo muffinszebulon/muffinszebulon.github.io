@@ -11,18 +11,14 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
     <loc>https://muffinszebulon.github.io/</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/"/>
-    <image:image>
-        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png</image:loc>
-        <image:title>Times &amp; Roll (2021) - Muffin's Zebulon</image:title>
-    </image:image>
 </url>
 <url>
     <loc>https://muffinszebulon.github.io/2021-TimesRoll.html</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/2021-TimesRoll.html"/>
@@ -33,7 +29,7 @@
 </url>
 <url>
     <loc>https://muffinszebulon.github.io/2010-AfterAllTheStoryGoes.html</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/2010-AfterAllTheStoryGoes.html"/>
@@ -44,7 +40,7 @@
 </url>
 <url>
     <loc>https://muffinszebulon.github.io/2000-MuffinsZebulon.html</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/2000-MuffinsZebulon.html"/>
@@ -55,24 +51,23 @@
 </url>
 <url>
     <loc>https://muffinszebulon.github.io/sitemap.html</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/sitemap.html"/>
-    <image:image>
-        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png</image:loc>
-        <image:title>Times &amp; Roll (2021) - Muffin's Zebulon</image:title>
-    </image:image>
 </url>
 <url>
     <loc>https://muffinszebulon.github.io/mentionslegales.html</loc>
-    <lastmod>2021-09-21</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/mentionslegales.html"/>
-    <image:image>
-        <image:loc>https://muffinszebulon.github.io/images/MuffinsZebulon-2021-TimesRoll.png</image:loc>
-        <image:title>Times &amp; Roll (2021) - Muffin's Zebulon</image:title>
-    </image:image>
+</url>
+<url>
+    <loc>https://muffinszebulon.github.io/app.html</loc>
+    <lastmod>2021-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://muffinszebulon.github.io/app.html"/>
 </url>
 </urlset>

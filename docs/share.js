@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   let shareTooltip = new bootstrap.Tooltip(shareButton);
 
-  shareButton.addEventListener('click', () => {
+  shareButton.addEventListener('click', (event) => {
+    event.preventDefault();
     const title = document.title;
     const url = canonicalElt ? canonicalElt.href : document.location.href;
     if (navigator && navigator.share) {

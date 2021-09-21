@@ -1,60 +1,87 @@
-/**
- * ServiceWorker.<br>
- * https://web.dev/offline-fallback-page/<br>
- * https://gist.github.com/adactio/fbaa3a5952774553f5e7<br>
- * https://googlechrome.github.io/samples/service-worker/basic/<br>
- * check : chrome://serviceworker-internals<br>
- */
-const VERSION = '1';
+const VERSION = '0.4';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
-const CACHES = [CACHE_STATIC, CACHE_DYNAMIC];
+const CACHE_A3 = `A3`;
+const CACHES = [CACHE_STATIC, CACHE_DYNAMIC, CACHE_A3];
+
 const OFFLINE_URL = 'offline.html';
 const BASE_URL = 'https://muffinszebulon.github.io/';
-const CACHED_URLS = [
-  OFFLINE_URL,
-  'favicon-32x32.png',
-  'images/MuffinsZebulon-header.jpg',
-  'images/MuffinsZebulon-2021-TimesRoll_192.png',
-  'images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg',
-  'images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg',
+const CACHE_STATIC_URLS_INTERNAL = [
+  BASE_URL + OFFLINE_URL,
+  BASE_URL + 'favicon-32x32.png',
+  BASE_URL + 'images/MuffinsZebulon-header.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2021-TimesRoll_192.png',
+  BASE_URL + 'images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg',
 
-  '2000-MuffinsZebulon.css',
-  '2000-MuffinsZebulon.html',
-  '2000-MuffinsZebulon.js',
-  '2010-AfterAllTheStoryGoes.css',
-  '2010-AfterAllTheStoryGoes.html',
-  '2010-AfterAllTheStoryGoes.js',
-  '2021-TimesRoll.css',
-  '2021-TimesRoll.html',
-  '2021-TimesRoll.js',
-  'audio.js',
-  'common-album.css',
-  'common.css',
-  'index.css',
-  'index.html',
-  'share.js',
+  BASE_URL + 'images/MuffinsZebulon-2021-TimesRoll.png',
+  BASE_URL + 'images/MuffinsZebulon-2010-AfterAllTheStoryGoes.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2000-MuffinsZebulon.jpg',
 
-  'audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-07-Virus.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-08-Alien.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-09-BadJoke.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3',
-  'audio/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3',
+  BASE_URL + '2000-MuffinsZebulon.css',
+  BASE_URL + '2000-MuffinsZebulon.html',
+  BASE_URL + '2000-MuffinsZebulon.js',
+  BASE_URL + '2010-AfterAllTheStoryGoes.css',
+  BASE_URL + '2010-AfterAllTheStoryGoes.html',
+  BASE_URL + '2010-AfterAllTheStoryGoes.js',
+  BASE_URL + '2021-TimesRoll.css',
+  BASE_URL + '2021-TimesRoll.html',
+  BASE_URL + '2021-TimesRoll.js',
+  BASE_URL + 'app.html',
+  BASE_URL + 'audio.js',
+  BASE_URL + 'common-album.css',
+  BASE_URL + 'common.css',
+  BASE_URL + 'favicon-rondblanc.png',
+  BASE_URL + 'index.css',
+  BASE_URL + 'index.html',
+  BASE_URL + 'pwa.js',
+  BASE_URL + 'share.js',
+  BASE_URL + 'site.webmanifest',
 ];
-const CACHED_URLS_EXTERNAL = [
+const CACHE_STATIC_URLS_EXTERNAL = [
   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js',
   'https://fonts.googleapis.com/css2?family=Montserrat&display=swap',
   // 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
 ];
+const CACHE_A3_URLS = [
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-07-Virus.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-08-Alien.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-09-BadJoke.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3',
+  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3',
+];
+
+var messageChannelPort;
+
+// -------------------------------------------------------------
+// Utils
+
+function piste2Url(cacheName, piste) {
+  let urls;
+  if (cacheName === CACHE_A3) {
+    urls = CACHE_A3_URLS;
+  } else {
+    return null;
+  }
+  if (!piste) {
+    return null;
+  }
+  let index = 0;
+  for (const url of urls) {
+    index++;
+    if (piste === index) {
+      return url;
+    }
+  }
+  return null;
+}
 
 async function addUrlToCache(cache, url) {
   try {
@@ -62,9 +89,11 @@ async function addUrlToCache(cache, url) {
     // Setting {cache: 'reload'} in the new request will ensure that
     // the response isn't fulfilled from the HTTP cache;
     // i.e., it will be from the network.
-    await cache.add(new Request(BASE_URL + url, { cache: 'reload' }));
+    await cache.add(new Request(url, { cache: 'reload' }));
+    return true;
   } catch (error) {
     console.error(url, error);
+    return false;
   }
 }
 
@@ -83,6 +112,12 @@ async function addExternalRequestToCache(cache, url) {
 }
 
 async function putResponseInCacheDynamic(request, response) {
+  if (
+    request.url.indexOf('.mp3') >= 0 || // trop lourd pour être caché sans consentement utilisateur
+    request.url.indexOf('service-worker.js') >= 0 //
+  ) {
+    return; // pas de mise en cache
+  }
   try {
     console.log(`add response to cache for ${request.url}`);
     const cache = await caches.open(CACHE_DYNAMIC);
@@ -91,31 +126,119 @@ async function putResponseInCacheDynamic(request, response) {
     console.error(request.url, error);
   }
 }
-
-async function deleteCache(cacheName) {
+async function deleteCache(cacheName, piste) {
   try {
-    console.log(`cache delete ${cacheName}`);
-    await caches.delete(cacheName);
+    console.debug(`cache delete ${cacheName}`);
+    if (!piste) {
+      await caches.delete(cacheName);
+    } else {
+      const cache = await caches.open(cacheName);
+      let url = piste2Url(cacheName, piste);
+      console.debug(`cache delete ${piste} ${url}`);
+      if (url) {
+        await cache.delete(url);
+      }
+    }
+    cacheState(cacheName);
+  } catch (error) {
+    console.error(error);
+  }
+}
+async function deleteCacheAll() {
+  const cacheNames = await caches.keys();
+  for (const cacheName of cacheNames) {
+    deleteCache(cacheName);
+  }
+}
+async function deleteCacheAllExceptMp3() {
+  const cacheNames = await caches.keys();
+  for (const cacheName of cacheNames) {
+    if (cacheName.indexOf('A') !== 0) {
+      deleteCache(cacheName);
+    }
+  }
+}
+// -------------------------------------------------------------
+// Actions
+
+async function addAllToCacheStatic() {
+  try {
+    const cache = await caches.open(CACHE_STATIC);
+    for (const url of CACHE_STATIC_URLS_INTERNAL) {
+      addUrlToCache(cache, url);
+    }
+    for (const urlExt of CACHE_STATIC_URLS_EXTERNAL) {
+      addExternalRequestToCache(cache, urlExt);
+    }
   } catch (error) {
     console.error(error);
   }
 }
 
+async function addToCache(cacheName, piste) {
+  try {
+    let urls;
+    if (cacheName === CACHE_A3) {
+      urls = CACHE_A3_URLS;
+    } else {
+      console.error(cacheName + ' not found');
+      return;
+    }
+    const cache = await caches.open(cacheName);
+    let index = 0;
+    const len = urls.length;
+    let mp3s = [];
+    let cachedCount = 0;
+    for (const url of urls) {
+      index++;
+      let isUrlCached = false;
+      if (!piste || piste === index) {
+        isUrlCached = await addUrlToCache(cache, url);
+      } else {
+        isUrlCached = !!(await cache.match(url));
+      }
+      mp3s.push(isUrlCached);
+      if (isUrlCached) {
+        cachedCount++;
+      }
+      messageChannelPort && messageChannelPort.postMessage({ type: 'CACHE_PROGRESS', cache: cacheName, cachedCount: cachedCount, max: len, mp3s: mp3s });
+    }
+    messageChannelPort && messageChannelPort.postMessage({ type: 'CACHE_STATE', cache: cacheName, cachedCount: cachedCount, max: len, mp3s: mp3s });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function cacheState(cacheName) {
+  let urls;
+  if (cacheName === CACHE_A3) {
+    urls = CACHE_A3_URLS;
+  } else {
+    console.debug(cacheName + ' not found');
+    return;
+  }
+  const cache = await caches.open(cacheName);
+  let mp3s = [];
+  let cachedCount = 0;
+  for (const url of urls) {
+    const isUrlCached = !!(await cache.match(url));
+    mp3s.push(isUrlCached);
+    if (isUrlCached) {
+      cachedCount++;
+    }
+  }
+  const len = urls.length;
+  messageChannelPort && messageChannelPort.postMessage({ type: 'CACHE_STATE', cache: cacheName, cachedCount: cachedCount, max: len, mp3s: mp3s });
+}
+
+// --------------------------------------------------
+// Listeners
+
 self.addEventListener('install', (event) => {
   console.log('event install');
   event.waitUntil(
     (async () => {
-      try {
-        const cache = await caches.open(CACHE_STATIC);
-        for (const url of CACHED_URLS) {
-          addUrlToCache(cache, url);
-        }
-        for (const urlExt of CACHED_URLS_EXTERNAL) {
-          addExternalRequestToCache(cache, urlExt);
-        }
-      } catch (error) {
-        console.error(error);
-      }
+      addAllToCacheStatic();
     })()
   );
   // Force the waiting service worker to become the active service worker.
@@ -154,9 +277,9 @@ self.addEventListener('fetch', (event) => {
           // Always fetch non-GET requests from the network
           return fetch(request); // networkResponse
         }
-        const cachedResponse = await caches.match(request);
+        const cachedResponse = await caches.match(request.url);
         if (cachedResponse) {
-          console.log(`response from cache for ${request.url}`);
+          console.debug(`response from cache for ${request.url}`);
           return cachedResponse;
         }
         const preloadResponse = await event.preloadResponse;
@@ -177,4 +300,30 @@ self.addEventListener('fetch', (event) => {
       }
     })()
   );
+});
+
+self.addEventListener('message', (event) => {
+  var data = event.data;
+  if (!data) {
+    return;
+  }
+  console.log(`SW receive ${data.type}`, event);
+  if (data.type === 'INIT_PORT') {
+    messageChannelPort = event.ports[0];
+    messageChannelPort.postMessage({ type: 'INIT_PORT' });
+  } else if (data.type === 'VERSION') {
+    messageChannelPort.postMessage({ type: 'VERSION', version: VERSION });
+  } else if (data.type === 'CACHE_STATE') {
+    cacheState(data.cache);
+  } else if (data.type === 'CACHE') {
+    addToCache(data.cache, data.piste);
+  } else if (data.type === 'UNCACHE') {
+    if (data.cache === 'ALL') {
+      deleteCacheAll();
+    } else if (data.cache === 'ALL_EXCEPTMP3') {
+      deleteCacheAllExceptMp3();
+    } else {
+      deleteCache(data.cache, data.piste);
+    }
+  }
 });

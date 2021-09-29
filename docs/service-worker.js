@@ -1,4 +1,4 @@
-const VERSION = '0.4';
+const VERSION = '0.8';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
 const CACHE_A3 = `A3`;
@@ -9,14 +9,14 @@ const BASE_URL = 'https://muffinszebulon.github.io/';
 const CACHE_STATIC_URLS_INTERNAL = [
   BASE_URL + OFFLINE_URL,
   BASE_URL + 'favicon-32x32.png',
-  BASE_URL + 'images/MuffinsZebulon-header.jpg',
-  BASE_URL + 'images/MuffinsZebulon-2021-TimesRoll_192.png',
-  BASE_URL + 'images/MuffinsZebulon-2010-AfterAllTheStoryGoes_192.jpg',
-  BASE_URL + 'images/MuffinsZebulon-2000-MuffinsZebulon_192.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2021-TimesRoll_80.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2010-AfterAllTheStoryGoes_80.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2000-MuffinsZebulon_80.jpg',
 
-  BASE_URL + 'images/MuffinsZebulon-2021-TimesRoll.png',
-  BASE_URL + 'images/MuffinsZebulon-2010-AfterAllTheStoryGoes.jpg',
-  BASE_URL + 'images/MuffinsZebulon-2000-MuffinsZebulon.jpg',
+  BASE_URL + 'images/MuffinsZebulon_575.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2021-TimesRoll_575.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2010-AfterAllTheStoryGoes_575.jpg',
+  BASE_URL + 'images/MuffinsZebulon-2000-MuffinsZebulon_575.jpg',
 
   BASE_URL + '2000-MuffinsZebulon.css',
   BASE_URL + '2000-MuffinsZebulon.html',

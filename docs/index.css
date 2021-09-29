@@ -3,13 +3,21 @@
 }
 
 nav {
-  background-image: url("./images/MuffinsZebulon-header.jpg");
   background-size: cover;
   background-position: center center;
   height: 20vw;
   min-height: 150px;
+  max-height: 190px;
+  width: 100%;
   z-index: 1000;
 }
+
+@media screen and (max-width: 576px)                          { nav { background-image: url("./images/MuffinsZebulon_575.jpg"); } } /* xs */
+@media screen and (min-width: 576px)  and (max-width: 768px)  { nav { background-image: url("./images/MuffinsZebulon.jpg"); } }     /* sm */
+@media screen and (min-width: 768px)  and (max-width: 992px)  { nav { background-image: url("./images/MuffinsZebulon.jpg"); } }     /* md */
+@media screen and (min-width: 992px)  and (max-width: 1200px) { nav { background-image: url("./images/MuffinsZebulon.jpg"); } }     /* lg */
+@media screen and (min-width: 1200px) and (max-width: 1400px) { nav { background-image: url("./images/MuffinsZebulon.jpg"); } }     /* xl */
+@media screen and (min-width: 1400px)                         { nav { background-image: url("./images/MuffinsZebulon.jpg"); } }     /* xxl */
 
 .navbar-brand {
   background-color:#000;

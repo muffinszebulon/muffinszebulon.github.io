@@ -1,4 +1,4 @@
-const VERSION = '0.8';
+const VERSION = '0.10';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
 const CACHE_A3 = `A3`;

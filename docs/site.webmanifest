@@ -25,9 +25,9 @@
     "start_url": "/index.html?source=pwa",
     "shortcuts": [
         {
-            "name": "Times & Roll (2021)",
-            "short_name": "Times & Roll",
-            "description": "Muffin's Zebulon - Times & Roll (2021)",
+            "name": "Times'n Roll (2021)",
+            "short_name": "Times'n Roll",
+            "description": "Muffin's Zebulon - Times'n Roll (2021)",
             "url": "/2021-TimesRoll.html?source=pwa",
             "icons": [{ "src": "/images/MuffinsZebulon-2021-TimesRoll_192.jpg", "sizes": "192x192" }]
         },

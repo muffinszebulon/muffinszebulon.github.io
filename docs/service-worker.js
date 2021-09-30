@@ -1,4 +1,4 @@
-const VERSION = '0.10';
+const VERSION = '0.23';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
 const CACHE_A3 = `A3`;
@@ -6,6 +6,7 @@ const CACHES = [CACHE_STATIC, CACHE_DYNAMIC, CACHE_A3];
 
 const OFFLINE_URL = 'offline.html';
 const BASE_URL = 'https://muffinszebulon.github.io/';
+const BASE_URL_MP3 = BASE_URL + 'audio/';
 const CACHE_STATIC_URLS_INTERNAL = [
   BASE_URL + OFFLINE_URL,
   BASE_URL + 'favicon-32x32.png',
@@ -45,17 +46,17 @@ const CACHE_STATIC_URLS_EXTERNAL = [
   // 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
 ];
 const CACHE_A3_URLS = [
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-04-IllBeHere.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-07-Virus.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-08-Alien.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-09-BadJoke.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3',
-  BASE_URL + 'audio/MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-01-TimesGoinBy.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-02-Vinaigre.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-03-GirlAndBoy.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-04-IllBeHere.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-05-OneMoreYear.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-06-ItsTimeForYou.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-07-Virus.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-08-Alien.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-09-BadJoke.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3',
 ];
 
 var messageChannelPort;
@@ -113,6 +114,7 @@ async function addExternalRequestToCache(cache, url) {
 
 async function putResponseInCacheDynamic(request, response) {
   if (
+    request.url.indexOf('.flac') >= 0 || // trop lourd pour être caché
     request.url.indexOf('.mp3') >= 0 || // trop lourd pour être caché sans consentement utilisateur
     request.url.indexOf('service-worker.js') >= 0 //
   ) {

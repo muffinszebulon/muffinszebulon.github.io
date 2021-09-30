@@ -54,3 +54,12 @@
   left: max(5%, calc((100vw - 75vh) / 2));
   opacity: 0.2;
 }
+
+#hifi {
+  position: absolute;
+  top: 15px;
+  right: 55px;
+  z-index: 1000;
+  border: 1px solid white;
+  color: white;
+}

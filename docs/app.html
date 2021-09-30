@@ -67,15 +67,16 @@
 </div>
 
 <div class="toggleCache d-none">
-  <h5 class="mb-0">Téléchargement</h5>
-  <div class="small lh-1 mb-3"><small><em>(permet une écoute hors ligne)</em></small></div>
+  <h5>Téléchargement</h5>
+  <div class="small lh-sm mb-3"><em>Le téléchargement en qualité Standard (mp3, 192Kbps, ~6Mo/titre) permet une écoute hors ligne.
+  <!--La qualité HiFi (flac, 1411Kbps, ~60Mo/titre) nécessite une connexion haut débit. --></em></div>
 
   <!-- 3 .............................................. -->
   <div class="row small">
     <div class="col-3 col-md-2 col-lg-1 pt-2">
       <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="toggleCacheA3" onchange="toggleCache(event, 'A3')">
-        <label class="form-check-label" for="toggleCacheA3"><img src="images/MuffinsZebulon-2021-TimesRoll_80.jpg" class="rounded" alt="album" width="40" height="40"></label>
+        <input class="form-check-input" role="button" type="checkbox" id="toggleCacheA3" onchange="toggleCache(event, 'A3')">
+        <label class="form-check-label" role="button" for="toggleCacheA3"><img src="images/MuffinsZebulon-2021-TimesRoll_80.jpg" class="rounded" alt="album" width="40" height="40"></label>
       </div>
     </div>
     <div class="col-8 col-md-9 col-lg-10 pt-2">
@@ -92,8 +93,8 @@
   <div class="row small">
     <div class="col-3 col-md-2 col-lg-1 pt-2">
       <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="toggleCacheA2" onchange="toggleCache(event, 'A2')" disabled>
-        <label class="form-check-label" for="toggleCacheA2"><img src="images/MuffinsZebulon-2010-AfterAllTheStoryGoes_80.jpg" class="rounded" alt="album" width="40" height="40"></label>
+        <input class="form-check-input" role="button" type="checkbox" id="toggleCacheA2" onchange="toggleCache(event, 'A2')" disabled>
+        <label class="form-check-label" role="button" for="toggleCacheA2"><img src="images/MuffinsZebulon-2010-AfterAllTheStoryGoes_80.jpg" class="rounded" alt="album" width="40" height="40"></label>
       </div>
     </div>
     <div class="col-8 col-md-9 col-lg-10 pt-2">
@@ -112,8 +113,8 @@
   <div class="row small">
     <div class="col-3 col-md-2 col-lg-1 pt-2">
       <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="toggleCacheA1" onchange="toggleCache(event, 'A1')"  disabled>
-        <label class="form-check-label" for="toggleCacheA1"><img src="images/MuffinsZebulon-2000-MuffinsZebulon_80.jpg" class="rounded" alt="album" width="40" height="40"></label>
+        <input class="form-check-input" role="button" type="checkbox" id="toggleCacheA1" onchange="toggleCache(event, 'A1')"  disabled>
+        <label class="form-check-label" role="button" for="toggleCacheA1"><img src="images/MuffinsZebulon-2000-MuffinsZebulon_80.jpg" class="rounded" alt="album" width="40" height="40"></label>
       </div>
     </div>
     <div class="col-8 col-md-9 col-lg-10 pt-2">

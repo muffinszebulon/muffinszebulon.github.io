@@ -42,6 +42,7 @@
 </head>
 
 <body>
+  <span id="hifi" class="badge border border-light text-light p-1">HiFi</badge></span>
   <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container-fluid">
       <a href="index.html" class="p-2"><img loading="lazy" src="favicon-rondblanc.png" alt="Home" width="40" height="40"></a>
@@ -77,14 +78,14 @@
     <div class="bg-dark text-white p-0 m-0 pt-1">
       <div class="row p-0 m-0">
         <div onclick="tracksAudioPrev()" role="button" title="Morceau précédent" class="col-2 pt-0 pb-2 ps-2 text-light"><span class="fas fa-chevron-left"></span></div>
-        <div onclick="tracksSlideToCurrent()" role="button" title="Paroles" class="col text-center pb-2"><strong id="audio-title">Here we are</strong></div>
+        <div onclick="tracksSlideToCurrent()" role="button" title="Paroles" class="col text-center pb-2"><strong id="audio-title"></strong></div>
         <div onclick="tracksAudioNext()" role="button" title="Morceau suivant" class="col-2 pt-0 pb-2 pe-2 text-light text-end"><span class="fas fa-chevron-right"></span></div>
       </div>
       <div class="text-center p-0 m-0 pb-1">
-        <audio id="audio" src="audio/MuffinsZebulon-2010-AfterAllTheStoryGoes-01-HereWeAre.mp3" controls="" class="bg-light rounded-pill">
-          <a id="audio-alt" href="audio/MuffinsZebulon-2010-AfterAllTheStoryGoes-01-HereWeAre.mp3">Download</a>
+        <audio id="audio" controls="" class="bg-light rounded-pill">
+          <a id="audio-alt">Download</a>
         </audio>
-        <div id="audio-error" class="d-none"></div>
+        <div id="audio-error" class="d-none lh-1 small"></div>
       </div>
     </div>
     <div class="container-fluid">
@@ -104,9 +105,9 @@
               src="images/MuffinsZebulon-2010-AfterAllTheStoryGoes.jpg" width="1024" height="1024" alt="2ème album" class="d-block img-cover img-cover-bg">
             <div class="carousel-caption pt-1">
               <div class="row">
-                <div class="col-lg-4 mt-1 ps-5">
+                <div class="col-md-6 col-lg-4 mt-1 ps-5">
                   <div class="ps-4">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-start track">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-start track">
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="2" onclick="tracksAudioSet(0)"><span class="badge border">1</span> Here we are</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="3" onclick="tracksAudioSet(1)"><span class="badge border">2</span> Long ago</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="4" onclick="tracksAudioSet(2)"><span class="badge border">3</span> My Dad</a></li>
@@ -119,20 +120,36 @@
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="11" onclick="tracksAudioSet(9)"><span class="badge border">10</span> Such a mess</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="12" onclick="tracksAudioSet(10)"><span class="badge border">11</span> Travel</a></li>
 <li class="nav-item"><a class="nav-link" role="button" data-bs-target="#carouselDark" data-bs-slide-to="3" onclick="tracksAudioSet(11)"><span class="badge border">12</span> After all the story goes</a></li>
-                  </ul>
+                    </ul>
+                    <div class="text-start lh-1 mt-5">
+                      <div class="d-flex">
+                        <div class="badge bg-white border text-dark border-dark px-2">
+                          <div class="form-check form-switch"><input class="form-check-input float-start" role="button" type="checkbox" id="toggleAudioExt" onchange="toggleAudioExt()"></div>
+                          <div>HiFi</div>
+                        </div>
+                        <div class="ms-1"><label class="form-check-label" role="button" for="toggleAudioExt">Qualité en streaming<br><span class="small">Standard : mp3 <small>(~6Mo/titre)</small><br>HiFi : flac <small>(~60Mo/t, cx haut débit)</small></span></label></div>
+                      </div>
+                      <div class="d-flex mt-3">
+                        <div class="me-1"><a href="app.html" class="badge bg-white p-2 border text-dark border-dark">App <span class="fas fa-info-circle"></span></a></div>
+                        <div class="small">Téléchargez les mp3<br>pour une écoute hors ligne</div>
+                      </div>
+                      <div class="d-flex mt-3 apphidden">
+                        <div class="me-1"><a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2010-AfterAllTheStoryGoes-mp3.zip" class="badge bg-white px-2 py-1 border text-dark border-dark"><span class="fas fa-download"></span> mp3<br><span class="small">63 Mo</span></a></div>
+                        <div class="me-1"><a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2010-AfterAllTheStoryGoes-flac.zip" class="badge bg-white px-2 py-1 border text-dark border-dark"><span class="fas fa-download"></span> flac<br><span class="small">526 Mo</span></a></div>
+                        <div class="me-1"><a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2010-AfterAllTheStoryGoes-wav.zip" class="badge bg-white px-2 py-1 border text-dark border-dark"><span class="fas fa-download"></span> wav<br><span class="small">651 Mo</span></a></div>
+                        <div class="pt-1 small">Fichiers<br>ZIP</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-lg-4 pt-2">
-                  <div class="text-center">
-                    <small>Téléchargement</small><br>
-                    <a href="app.html" class="badge bg-white p-2 border text-dark border-dark"><span class="fas fa-angle-right"></span> App <span class="fas fa-info-circle"></span></a>
-                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2010-AfterAllTheStoryGoes-mp3.zip" class="badge bg-white p-2 border text-dark border-dark apphidden"><span class="fas fa-download"></span> mp3</a>
-                    <a href="http://muffinszebulon.free.fr/zip/MuffinsZebulon-2010-AfterAllTheStoryGoes-wav.zip" class="badge bg-white p-2 border text-dark border-dark apphidden"><span class="fas fa-download"></span> wav</a>
+                <div class="col-md-6 col-lg-4 pt-4 pe-5">
+                  <div class="small ms-3 me-1">
+                    <a href="mailto:muffinszebulon@gmail.com"><span class="fas fa-envelope"></span> muffinszebulon@gmail.com</a><br>
                   </div>
-                  <ul class="list-unstyled pt-4 pb-0">
+                  <ul class="list-unstyled pt-4 pb-3">
                     <li>
-                      <div class="row py-2 ps-4 text-start">
-                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/HernandezAlain2.jpg" alt="Alain Hernandez"></div>
+                      <div class="row py-0 ps-4 text-start">
+                        <div class="col-sm-3"><img loading="lazy" class="img-fluid rounded-circle" src="images/HernandezAlain2.jpg" alt="Alain HERNANDEZ"></div>
                         <div class="col-sm-9 py-2"><h6 class="mb-0">Alain HERNANDEZ</h6><div class="small lh-sm">
 Paroles et musique,<br>
 Chant, choeurs,<br>
@@ -175,6 +192,32 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Here we are</h4>
               <p><a onclick="tracksAudioSet(0)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Doo,doo doo doo.....
+                  <br>
+                  <br>Here we are we're back again
+                  <br>Did we change do we look the same
+                  <br>We have gone for many years
+                  <br>We're afraid and we get feared
+                  <br>Feared...
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Here we are in front of you
+                  <br>It's so good to be with you
+                  <br>When we're here we feel so fine
+                  <br>And tonight will be the night
+                  <br>Here we are...
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Doo doo doo doo ...
+                  <br>We have gone for many years
+                  <br>Here we are back again...
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -182,6 +225,41 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Long ago</h4>
               <p><a onclick="tracksAudioSet(1)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Long ago with an old good friend
+                  <br>Long ago in a rock'n'roll band
+                  <br>Long ago we tried to play the King
+                  <br>Long ago when we found that life was pink
+                  <br>Oh long ago
+                  <br>Oh such long ago
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Long ago we wrote our first song
+                  <br>Long ago when we thought we were so strong
+                  <br>Long ago we dreamed to on top
+                  <br>Long ago of the best bands of the Pop
+                  <br>Long ago
+                  <br>Such such such long ago
+                  <br>Long ago
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Long ago I thought that I was Paul
+                  <br>Long ago his pictures on my wall
+                  <br>Long ago I tried to understand
+                  <br>Now I know it's so hard to be a man
+                  <br>Long ago
+                  <br>Such such such long ago
+                  <br>Long ago...
+                  <br>
+                  <br>Take me back
+                  <br>I want to back
+                  <br>Long ago
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -189,6 +267,47 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>My Dad</h4>
               <p><a onclick="tracksAudioSet(2)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Doo doo doo doo doo....
+                  <br>
+                  <br>Lookin' trough the past again
+                  <br>A little boy runnin' in the sand
+                  <br>Hand in hand with a man
+                  <br>My Dad
+                  <br>
+                  <br>He used to take me for a ride
+                  <br>The sun did ever shine
+                  <br>I was so proud to walk hand in hand 
+                  <br>With my Dad
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Hand in hand with my Dad
+                  <br>Hand in hand I was so glad
+                  <br>Hand in hand with my Dad
+                  <br>Flyin' in the paradise
+                  <br>Hand in hand with my Dad
+                  <br>Hand in hand I was so glad
+                  <br>Hand in hand with my Dad 
+                  <br>Flyin' to the envenly skies
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Lookin' trough the past and pain
+                  <br>It's fallin' like the rain
+                  <br>So I'll never walk hand in hand
+                  <br>With my Dad
+                  <br>
+                  <br>Hand in hand .....
+                  <br>
+                  <br>Lookin' trough the past again
+                  <br>A little boy runnin' in the sand
+                  <br>Hand in hand with a man
+                  <br>My Dad.....
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -196,6 +315,32 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>You'll be part of my world</h4>
               <p><a onclick="tracksAudioSet(3)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>I can wait for a long time
+                  <br>I know you will arrive
+                  <br>I can wait all my life
+                  <br>I'm sure you will be mine
+                  <br>Girl you'll be part of my world
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Well it's such a thrill
+                  <br>Come on in my dream
+                  <br>You'd better to be here
+                  <br>And every thing will be clear
+                  <br>Yeah girl you'll be part of my world
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>You can cross many miles
+                  <br>You can fly trough the skies
+                  <br>One thing that I'm sure of
+                  <br>You'll be part of my world
+                  <br>Girl for the best and the worst
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -203,6 +348,46 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Typical postcard</h4>
               <p><a onclick="tracksAudioSet(4)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Holi holi holi holidays
+                  <br>Good times are comin'
+                  <br>Holi holi holi holidays
+                  <br>Rain's on the run
+                  <br>Holi holi holi holidays
+                  <br>Good time's comin' in
+                  <br>Holi holi holi holidays
+                  <br>Here comes the sun
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Typical postcard
+                  <br>Sunny pictures corner sea
+                  <br>Typical postcard
+                  <br>Sailboats floatin' very easy
+                  <br>Typical postcard
+                  <br>Smilin' surfers brown and happy
+                  <br>Typical postcard
+                  <br>Golden skin girls look so pretty
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Oh oh holiday time
+                  <br>Ugly dirty dirty dirty getter
+                  <br>Oh oh holiday
+                  <br>It's an honey trip we're gettin' in
+                  <br>Ho ho holiday time
+                  <br>Ugly dirty dirty money maker
+                  <br>Oh oh holiday
+                  <br>It's an honey trip for love and dream
+                  <br>
+                  <br>Typical postcard
+                  <br>Fire lights shine trough the night
+                  <br>Typical postcard
+                  <br>Color pictures clear blue sky...
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -210,6 +395,34 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>I had enough</h4>
               <p><a onclick="tracksAudioSet(5)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Watchin' rainbow after rain
+                  <br>Silent snow on the land
+                  <br>Dirty refrain that you sing
+                  <br>Givin' me pain and turn me black as an ink
+                  <br>I had enough...
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Acid clouds on the land
+                  <br>Pc mouse in my hand
+                  <br>TV soaps turn me bad
+                  <br>So racing boats are drivin' me mad
+                  <br>I had enough...
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Lookin' at stars trough the night
+                  <br>Flashin' balls I don't mind
+                  <br>Watchin' rainbow
+                  <br>Silent snow
+                  <br>Make me crazy
+                  <br>I had enough...
+                  <br>Drive me angry
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -217,6 +430,48 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Many years from now</h4>
               <p><a onclick="tracksAudioSet(6)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Many years from 
+                  <br>Many years from
+                  <br>Many years from now...
+                  <br>
+                  <br>Where's the time when I was just a kid
+                  <br>Many years from now
+                  <br>I was young I was seventeen
+                  <br>I used to sing Twist and Shout
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Where's this time it's so far
+                  <br>But all these years are runnin' in my heart
+                  <br>Tell me why
+                  <br>I want cry
+                  <br>Many years from 
+                  <br>Many years from
+                  <br>Many years from now ...
+                  <br>
+                  <br>Me and my fellows in the Park
+                  <br>We tried to play guitar
+                  <br>In the sunshine and in the dark
+                  <br>We dreamed to a star
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Tell me why it's the past
+                  <br>I can't explain what I feel inside
+                  <br>Try not cry but I'm sad
+                  <br>
+                  <br>Where's the time of these sunny years
+                  <br>When I was just a kid
+                  <br>It's so far and I shade my tears
+                  <br>Bye bye seventeen
+                  <br>
+                  <br>Where's this time it's so far
+                  <br>But all theses are runnin' in my heart
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -224,6 +479,46 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Precious one</h4>
               <p><a onclick="tracksAudioSet(7)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Well it's dawn and I'm awake
+                  <br>I'mso glad I see your face
+                  <br>Everyday I find you full of grace
+                  <br>Every mornin' when you smile
+                  <br>Sun is shinin' in my life
+                  <br>Everyday I find love in your eyes
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Only you oo oo oo
+                  <br>Only you lives in my heart
+                  <br>And with I'll never get into the dark
+                  <br>Only you oo oo oo
+                  <br>Only you can give me love
+                  <br>Oh there's only you
+                  <br>You my one and only one
+                  <br>You precious one
+                  <br>
+                  <br>In the evenin' side by side
+                  <br>When you start to hold me tight
+                  <br>Everynight you take me up to sky
+                  <br>Here the moon and you're the star
+                  <br>Givin' light inside my heart
+                  <br>Everynight you make me go so far
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Only you oo oo oo
+                  <br>Only you lives in my heart
+                  <br>And with I'll never get into the dark
+                  <br>Only you oo oo oo
+                  <br>Only you can give me love
+                  <br>Oh there's only you
+                  <br>You my one and only one
+                  <br>You precious one
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -231,6 +526,42 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Want it now</h4>
               <p><a onclick="tracksAudioSet(8)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Waitin' hopin' someting new
+                  <br>It's not the best we got to do
+                  <br>Wantin' fightin' for a new earth
+                  <br>Try to stop the world gettin' worth
+                  <br>
+                  <br>Flyin' easy trough the space
+                  <br>Livin' quiet in a good place
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>We can get it
+                  <br>If we want it
+                  <br>We can get it
+                  <br>We had to want it
+                  <br>Just to want it now
+                  <br>
+                  <br>Sleepin' dreamin' of a new world
+                  <br>Speakin' language we never heard
+                  <br>Wantin' fightin' for a new earth
+                  <br>Try to stop the world gettin' worth
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Easy livin' on this world
+                  <br>Flyin' up free as a bird
+                  <br>
+                  <br>We can get it
+                  <br>If we want it
+                  <br>We can get it
+                  <br>We had to want it
+                  <br>Just to want it now
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -238,6 +569,43 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Such a mess</h4>
               <p><a onclick="tracksAudioSet(9)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>As you went I came back
+                  <br>When you sleep I'm awake
+                  <br>All is right you are sad
+                  <br>Something good in the end you find it bad
+                  <br>Oh such a mess
+                  <br>Such a mess
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>I'm in town you get  home
+                  <br>As I'm back you have flown
+                  <br>Laid in grass you don't like
+                  <br>You still work and the people are on strike
+                  <br>Oh such a mess
+                  <br>Such a mess...
+                  <br>
+                  <br>The mess
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Up in sky sun of gold
+                  <br>Weather's fine but you're cold
+                  <br>When I smile
+                  <br>You get sad I am there you get out and say goodbye
+                  <br>Oh such a mess
+                  <br>Such a mess....
+                  <br>
+                  <br>Oh such a mess 
+                  <br>The mess you're in
+                  <br>Look out baby
+                  <br>The mess you're in
+                  <br>Look out
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -245,6 +613,45 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>Travel</h4>
               <p><a onclick="tracksAudioSet(10)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>Happy fool
+                  <br>In a wine pool
+                  <br>Paper land 
+                  <br>Approaches to land
+                  <br>Moon of sorrow
+                  <br>Sad tomorrow
+                  <br>Dyin' sun
+                  <br>Is on the run
+                  <br>And here I come and here I come
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Flyin' carpet trough the sky
+                  <br>Movin' at the speed of light
+                  <br>Disappearin' in a black hole
+                  <br>Between crazy planet balls
+                  <br>And here I come and here I come
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Days away
+                  <br>Ugly day
+                  <br>Plastic boat
+                  <br>Along the road
+                  <br>Milky way's just
+                  <br>Sea of dust
+                  <br>Agony is just begun
+                  <br>And here I come and here I come
+                  <br>
+                  <br>Hurry carpet on the ground
+                  <br>Travellin' at the speed of sound
+                  <br>Lookin' for a better place
+                  <br>Sun is burnin' trough the space
+                  <br>And here I come and here I come...
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -252,6 +659,40 @@ Production, mixage, mastering
             <div class="carousel-caption">
               <h4>After all the story goes</h4>
               <p><a onclick="tracksAudioSet(11)" role="button" class="text-dark"><span class="fas fa-play"></span>&nbsp;&nbsp;Écouter</a></p>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-4">
+                  <p>After all the story goes
+                  <br>We are livin' and the wind blows
+                  <br>No matter if the years go by
+                  <br>For you and I
+                  <br>
+                  <br>We crossed dirty crises
+                  <br>We shaded too many tears
+                  <br>Now it's over and all is gone
+                  <br>The wind had blown
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>Lovers we're still lovers
+                  <br>Lovers you and I
+                  <br>
+                  <br>No matter if it rains or snows
+                  <br>After all our story goes
+                  <br>Years and years can go by
+                  <br>We don't mind
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                  <p>We could laugh or we could cry
+                  <br>After all the time's goin' by
+                  <br>We are livin' and  our love is here
+                  <br>That's what is real
+                  <br>
+                  <br>Lovers we're still lovers
+                  <br>Lovers you and I
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -30,6 +30,31 @@ const TRACK_ROW = `
 // -------------------------------------------------------------
 // Utils
 
+/** Detects if device is on iOS. */
+function isIos() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /iphone|ipad|ipod|macintosh/.test(userAgent);
+}
+function show(element, innerHTML) {
+  if (!element) {
+    return;
+  }
+  if (innerHTML !== undefined) {
+    element.innerHTML = innerHTML;
+  }
+  element.classList.toggle('d-none', false);
+}
+function hide(element) {
+  element && element.classList.toggle('d-none', true);
+}
+function formatBytes(bytes, decimals = 2) {
+  if (bytes === 0) return '0';
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['o', 'Ko', 'Mo', 'Go', 'To', 'Po', 'Eo', 'Zo', 'Yo'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
 function getPWADisplayMode() {
   if (document.referrer.startsWith('android-app://')) {
     return 'twa';
@@ -46,31 +71,6 @@ function getPWADisplayMode() {
 function isInAppMode() {
   return getPWADisplayMode() != 'browser';
 }
-/** Detects if device is on iOS. */
-function isIos() {
-  const userAgent = navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test(userAgent);
-}
-function formatBytes(bytes, decimals = 2) {
-  if (bytes === 0) return '0';
-  const k = 1024;
-  const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ['o', 'Ko', 'Mo', 'Go', 'To', 'Po', 'Eo', 'Zo', 'Yo'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-}
-function show(element, innerHTML) {
-  if (!element) {
-    return;
-  }
-  if (innerHTML !== undefined) {
-    element.innerHTML = innerHTML;
-  }
-  element.classList.toggle('d-none', false);
-}
-function hide(element) {
-  element && element.classList.toggle('d-none', true);
-}
 function setPwaMessage(message) {
   const isAppInstalled = message === 'Application installée';
   const isAppCanBeInstalled = message === '';
@@ -83,9 +83,18 @@ function setPwaMessage(message) {
     hide(buttonInstall);
     show(divMessage, message);
   } else if (isAppCanBeInstalled) {
-    show(buttonInstall);
-    buttonInstall.toggleAttribute('disabled', false);
-    show(divMessage, isIos() ? `Cliquer ensuite sur l'action Ajouter<br>Sur l'écran d'accueil <span class="far fa-plus-square"></span>` : '');
+    if (isIos()) {
+      hide(buttonInstall);
+      show(
+        divMessage,
+        `Pour installer l'application, cliquer sur <img src="apple-share.jpg" width="16" height="16" alt=""> puis tout en bas,` +
+          `sur l'action ajouter <span class="text-nowrap">« Sur l'écran d'accueil <span class="far fa-plus-square"></span> »</span>`
+      );
+    } else {
+      show(buttonInstall);
+      buttonInstall.toggleAttribute('disabled', false);
+      show(divMessage, '');
+    }
   } else {
     hide(buttonInstall);
     hide(divMessage);
@@ -254,10 +263,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
 /* exported install */
 async function install(event) {
   event.preventDefault();
-  if (isIos()) {
-    navigator.share({ title: document.title, url: document.location.href });
-    return;
-  }
   if (!deferredPrompt) {
     return;
   }

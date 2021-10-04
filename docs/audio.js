@@ -106,6 +106,7 @@ function setAudioExt(audioExt) {
 function tracksAudioNext() {
   trackCurrentIndex = ++trackCurrentIndex % document.tracks.length;
   tracksAudioSet(trackCurrentIndex);
+  tracksSlideToCurrent();
 }
 
 /* exported tracksAudioPrev */
@@ -116,6 +117,7 @@ function tracksAudioPrev() {
     trackCurrentIndex--;
   }
   tracksAudioSet(trackCurrentIndex);
+  tracksSlideToCurrent();
 }
 
 function tracksSlideTo(slideIndex) {
@@ -169,3 +171,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+window.addEventListener(
+  'keydown',
+  (event) => {
+    if (event.code === 'ArrowLeft' || event.code === 'MediaTrackPrevious') {
+      tracksAudioPrev();
+    } else if (event.code === 'ArrowRight' || event.code === 'MediaTrackNext') {
+      tracksAudioNext();
+    } else if (event.code === 'Space') {
+      event.preventDefault();
+      const audio = document.getElementById('audio');
+      audio.paused ? audio.play() : audio.pause();
+    } else if (event.code === 'Escape') {
+      const audio = document.getElementById('audio');
+      audio.pause();
+    }
+  },
+  true
+);

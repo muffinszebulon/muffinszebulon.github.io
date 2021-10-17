@@ -1,8 +1,9 @@
-const VERSION = '1.2';
+const VERSION = '2.0';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
 const CACHE_A3 = `A3`;
-const CACHES = [CACHE_STATIC, CACHE_DYNAMIC, CACHE_A3];
+const CACHE_A2 = `A2`;
+const CACHES = [CACHE_STATIC, CACHE_DYNAMIC, CACHE_A3, CACHE_A2];
 
 const OFFLINE_URL = 'offline.html';
 const BASE_URL = 'https://muffinszebulon.github.io/';
@@ -58,17 +59,39 @@ const CACHE_A3_URLS = [
   BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-10-MysteryGirl.mp3',
   BASE_URL_MP3 + 'MuffinsZebulon-2021-TimesRoll-11-AVeryGoodMum.mp3',
 ];
+const CACHE_A2_URLS = [
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-01-HereWeAre.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-02-LongAgo.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-03-MyDad.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-04-YoullBePartOfMyWorld.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-05-TypicalPostcard.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-06-IHadEnough.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-07-ManyYearsFromNow.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-08-PreciousOne.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-09-WantItNow.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-10-SuchAMess.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-11-Travel.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-12-AfterAllTheStoryGoes.mp3',
+];
 
 var messageChannelPort;
 
 // -------------------------------------------------------------
 // Utils
 
-function piste2Url(cacheName, piste) {
-  let urls;
+function getCacheUrls(cacheName) {
   if (cacheName === CACHE_A3) {
-    urls = CACHE_A3_URLS;
+    return CACHE_A3_URLS;
+  } else if (cacheName === CACHE_A2) {
+    return CACHE_A2_URLS;
   } else {
+    console.debug(cacheName + ' not found');
+    return null;
+  }
+}
+function piste2Url(cacheName, piste) {
+  let urls = getCacheUrls(cacheName);
+  if (!urls) {
     return null;
   }
   if (!piste) {
@@ -179,11 +202,8 @@ async function addAllToCacheStatic() {
 
 async function addToCache(cacheName, piste) {
   try {
-    let urls;
-    if (cacheName === CACHE_A3) {
-      urls = CACHE_A3_URLS;
-    } else {
-      console.error(cacheName + ' not found');
+    let urls = getCacheUrls(cacheName);
+    if (!urls) {
       return;
     }
     const cache = await caches.open(cacheName);
@@ -212,11 +232,8 @@ async function addToCache(cacheName, piste) {
 }
 
 async function cacheState(cacheName) {
-  let urls;
-  if (cacheName === CACHE_A3) {
-    urls = CACHE_A3_URLS;
-  } else {
-    console.debug(cacheName + ' not found');
+  let urls = getCacheUrls(cacheName);
+  if (!urls) {
     return;
   }
   const cache = await caches.open(cacheName);

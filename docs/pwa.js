@@ -201,6 +201,7 @@ async function initMessageChannel() {
     navigator.serviceWorker.controller.postMessage({ type: 'INIT_PORT' }, [messageChannel.port2]);
     navigator.serviceWorker.controller.postMessage({ type: 'VERSION' });
     navigator.serviceWorker.controller.postMessage({ type: 'CACHE_STATE', cache: 'A3' });
+    navigator.serviceWorker.controller.postMessage({ type: 'CACHE_STATE', cache: 'A2' });
     messageChannel.port1.onmessage = (event) => {
       var data = event.data;
       if (!data) {

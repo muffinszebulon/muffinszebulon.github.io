@@ -45,7 +45,7 @@ a:hover { color: var(--bs-secondary); }
 
 @media all and (display-mode: standalone) {
   /* Here goes the CSS rules that will only apply if app is running standalone */
-  .apphidden { display: none; }
+  .apphidden { display: none !important; }
 }
 
 /* Sticky footer styles

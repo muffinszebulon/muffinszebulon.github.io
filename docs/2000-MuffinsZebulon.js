@@ -8,6 +8,6 @@ document.tracks = [
   { title: 'Second floor', file: 'MuffinsZebulon-2000-MuffinsZebulon-07-SecondFloor' },
   { title: 'When you find love', file: 'MuffinsZebulon-2000-MuffinsZebulon-08-WhenYouFindLove' },
   { title: "It doesn't begin easy", file: 'MuffinsZebulon-2000-MuffinsZebulon-09-ItDoesntBeginEasy' },
-  { title: 'You have come', file: 'MuffinsZebulon-2000-MuffinsZebulon-10-YouHaveCome' },
-  { title: "Don't ever stay alone", file: 'MuffinsZebulon-2000-MuffinsZebulon-11-DontEverStayAlone' },
+  { title: "Don't ever stay alone", file: 'MuffinsZebulon-2000-MuffinsZebulon-10-DontEverStayAlone' },
+  { title: 'Thank you once again', file: 'MuffinsZebulon-2000-MuffinsZebulon-11-ThankYouOnceAgain' },
 ];

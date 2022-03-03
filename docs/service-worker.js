@@ -1,9 +1,10 @@
-const VERSION = '3.0';
+const VERSION = '3.1';
 const CACHE_STATIC = `CACHE_STATIC_${VERSION}`;
 const CACHE_DYNAMIC = `CACHE_DYNAMIC_${VERSION}`;
 const CACHE_A3 = `A3`;
 const CACHE_A2 = `A2`;
-const CACHES = [CACHE_STATIC, CACHE_DYNAMIC, CACHE_A3, CACHE_A2];
+const CACHE_A1 = `A1`;
+const CACHES = [CACHE_STATIC, CACHE_DYNAMIC, CACHE_A3, CACHE_A2, CACHE_A1];
 
 const OFFLINE_URL = 'offline.html';
 const BASE_URL = 'https://muffinszebulon.github.io/';
@@ -73,6 +74,19 @@ const CACHE_A2_URLS = [
   BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-11-Travel.mp3',
   BASE_URL_MP3 + 'MuffinsZebulon-2010-AfterAllTheStoryGoes-12-AfterAllTheStoryGoes.mp3',
 ];
+const CACHE_A1_URLS = [
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-01-ThankYouToBeHere.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-02-KingForADay.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-03-Bitterness.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-04-WhenWeGetOld.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-05-LuckyBreak.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-06-RailsOfYourLife.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-07-SecondFloor.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-08-WhenYouFindLove.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-09-ItDoesntBeginEasy.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-10-DontEverStayAlone.mp3',
+  BASE_URL_MP3 + 'MuffinsZebulon-2000-MuffinsZebulon-11-ThankYouOnceAgain.mp3',
+];
 
 var messageChannelPort;
 
@@ -84,6 +98,8 @@ function getCacheUrls(cacheName) {
     return CACHE_A3_URLS;
   } else if (cacheName === CACHE_A2) {
     return CACHE_A2_URLS;
+  } else if (cacheName === CACHE_A1) {
+    return CACHE_A1_URLS;
   } else {
     console.debug(cacheName + ' not found');
     return null;
